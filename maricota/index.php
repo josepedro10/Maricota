@@ -30,6 +30,8 @@
     </header>
 
     <main>
+    
+
         <div class="linha1">
             <div class="pr1">
                 <img src="./imagens/bota.jpg" alt="">
