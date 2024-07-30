@@ -1,3 +1,24 @@
+<?php
+include 'db.php';
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+    $cpf = $_POST['cpf']
+
+    $sql = "INSERT INTO usuarios (nome, email, senha, cpf) VALUES ('$nome', '$email', '$senha', '$cpf)";
+    
+    if ($conn->query($sql) === TRUE) {
+        echo "Cadastro realizado com sucesso!";
+    } else {
+        echo "Erro: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,20 +51,7 @@
        <label for="password">Senha</label>
        <input type="password" id="password" name="password" placeholder="senha" required>
        </div>
-       <div class="senha">
-       <label for="password">Repita a senha</label>
-       <input type="password" id="password" name="password" placeholder="repita a senha" required>
-       </div>
 
-        <div class="genero">
-        <label for="" class="nomeg">Genero</label>
-        <input type="radio" id="m" name="m" value="Masculino">
-        <label for="m">Masculino</label>
-        <input type="radio" id="f" name="f" value="Feminino">
-        <label for="f">Feminino</label>
-        <input type="radio" id="outro" name="o" value="Outro">
-        <label for="outro">Outro</label>
-        </div>
 
     <div class="cpf">
         <label for="text">CPF</label>

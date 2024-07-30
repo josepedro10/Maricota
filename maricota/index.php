@@ -13,10 +13,7 @@
         </div>
 
         <div class="search">
-        <form action="/search" method="GET">
-        <input type="search" name="query" placeholder="Digite sua pesquisa">
-        <button type="submit">Pesquisar</button>
-        </form>
+        <a href="cadproduto.php">Cadastre seu produto</a>
         </div>
 
         <div class="ac">
