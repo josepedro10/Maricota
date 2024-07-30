@@ -22,6 +22,8 @@
     </div>
 
     <div class="ladodireito">
+    <h1>Bota Frances Couro Prata</h1>
+    <h2>R$675,00</h2>
     <div class="descricao">
     <p>Bota prata perfeita para arrasar no inverso nas festas juninas e shows. Trazendo confiança e muita beleza, a francês up te deixa confortável e  linda.</p>
     </div>

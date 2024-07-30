@@ -30,29 +30,11 @@
        <label for="password">Senha</label>
        <input type="password" id="password" name="password" placeholder="senha" required>
        </div>
-       <div class="senha">
-       <label for="password">Repita a senha</label>
-       <input type="password" id="password" name="password" placeholder="repita a senha" required>
-       </div>
 
-        <div class="genero">
-        <label for="" class="nomeg">Genero</label>
-        <input type="radio" id="m" name="m" value="Masculino">
-        <label for="m">Masculino</label>
-        <input type="radio" id="f" name="f" value="Feminino">
-        <label for="f">Feminino</label>
-        <input type="radio" id="outro" name="o" value="Outro">
-        <label for="outro">Outro</label>
-        </div>
 
     <div class="cpf">
         <label for="text">CPF</label>
         <input type="text" name="cpf" placeholder="000.000.000-00">
-    </div>
-
-    <div class="numero">
-        <label for="telefone">celular</label>
-        <input type="tel" id="phone" name="telefone" placeholder="(00) 00000-0000">
     </div>
 
     <div class="criar">
