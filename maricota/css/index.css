@@ -6,7 +6,7 @@ body {
 
 header {
     display: flex;
-    background-color: #ededdd;
+    background-color: #fafafa;
 }
 
 .logo > img {
@@ -15,34 +15,24 @@ header {
     padding-top: 3px;
 }
 
+.espacamento {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+h1 {
+    font-size: 65px;
+    margin-left: 50px;
+}
+
 .search {
-    margin-top: 40px;
-    margin-left: 150px;
-}
-
-.search input[type="search"] {
-    padding: 10px;
-    font-size: 16px;
-    width: 300px;
-    border: 3px solid #ccc;
-    border-radius: 20px;
-    outline: none;
-}
-
-.search button {
-    padding: 10px;
-    font-size: 16px;
-    border: 3px solid #ccc;
-    border-left: none;
-    background-color: #88e176a9;
-    color: white;
-    border-radius: 20px;
-    cursor: pointer;
+    margin-top: 35px;
+    margin-left: 650px;
 }
 
 .ac {
-    margin-left: 250px;
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 .ac > a > img {
@@ -51,8 +41,8 @@ header {
 }
 
 .carrinho {
-    margin-top: 40px;
-    margin-left: 20px;
+    margin-top: 45px;
+
 }
 
 .carrinho > a > img {
@@ -61,7 +51,7 @@ header {
 }
 
 main {
-    background-color: #eaffd4;
+    background-color: #ffffff;
     width: auto;
     height: auto;
 }
@@ -74,7 +64,7 @@ main {
 
 .pr1 {
     font-size: 15px;
-    background-color: #cedba4;
+    background-color: #f5f5f5;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -105,7 +95,7 @@ main {
 
 .pr2 {
     font-size: 15px;
-    background-color: #cedba4;
+    background-color: #f5f5f5;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -130,7 +120,7 @@ main {
 
 .pr3 {
     font-size: 15px;
-    background-color: #cedba4;
+    background-color: #f5f5f5;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -156,7 +146,7 @@ main {
 
 .pr4 {
     font-size: 15px;
-    background-color: #cedba4;
+    background-color: #f5f5f5;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -182,7 +172,7 @@ main {
 
 .pr5 {
     font-size: 15px;
-    background-color: #cedba4;
+    background-color: #f5f5f5;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -203,8 +193,8 @@ main {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px 0;
-    color: black;
-    background-color: white;
+    color: rgb(216, 199, 199);
+    background-color: rgb(29, 26, 26);
     text-align: center;
     text-decoration: none;
     border-radius: 4px;
@@ -214,10 +204,11 @@ main {
 
 footer {
     width: auto;
-    background-color: #b5d593;
+    background-color: rgb(29, 26, 26);
     height: auto;
     padding: 20px 0;
     text-align: center;
+    color: rgb(216, 199, 199);
 }
 
 .footer-container {
@@ -236,7 +227,7 @@ footer {
 }
 
 .footer-column h3 {
-    border-bottom: 2px solid #68ce6f;
+    border-bottom: 2px solid rgb(216, 199, 199);
     padding-bottom: 10px;
     margin-bottom: 10px;
 }

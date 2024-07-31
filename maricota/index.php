@@ -12,8 +12,9 @@
             <img src="./imagens/nova.jpg" alt="">
         </div>
 
-        <div class="search">
-        <a href="cadproduto.php">Cadastre seu produto</a>
+       <div class="espacamento">
+       <div class="search">
+        <a href="cadproduto.php" class="button-link">Cadastre seu produto</a>
         </div>
 
         <div class="ac">
@@ -27,9 +28,14 @@
                 <img src="./imagens/sacola.png" alt="">
             </a>
         </div>
+       </div>
     </header>
 
     <main>
+
+        <h1>Sapatos</h1>
+        <hr>
+
         <div class="linha1">
             <div class="pr1">
                 <img src="./imagens/bota.jpg" alt="">
@@ -67,6 +73,9 @@
                 </div>
             </div>
         </div>
+
+        <h1>Tenis</h1>
+        <hr>
 
         <div class="linha2">
         <div class="pr2">
@@ -107,6 +116,9 @@
             </div>
         </div>
 
+        <h1>Sandalias</h1>
+        <hr>
+
         <div class="linha3">
         <div class="pr3">
                 <img src="./imagens/sapato-scarpin.jpg" alt="">
@@ -146,6 +158,9 @@
             </div>
         </div>
 
+        <h1>Saltos</h1>
+        <hr>
+
         <div class="linha4">
         <div class="pr4">
                 <img src="./imagens/tenis-schutz.jpg" alt="">
@@ -184,6 +199,9 @@
                 </div>
             </div>
         </div>
+
+        <h1>Botas</h1>
+        <hr>
 
         <div class="linha5">
         <div class="pr5">
