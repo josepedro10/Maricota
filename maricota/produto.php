@@ -29,21 +29,26 @@
     </div>
 
     <div class="formu">
-    <form action="pagamento.php" method="post">
-    <label for='tamanho'>Tamanho:</label>
-                        <select name='tamanho' id='tamanho'>
-                            <option value='36'>36</option>
-                            <option value='37'>37</option>
-                            <option value='38'>38</option>
-                            <option value='39'>39</option>
-                            <option value='40'>40</option>
-                            <option value='41'>41</option>
-                            <option value='42'>42</option>
-                            <option value='43'>43</option>
-                        </select>
-                        <input type='hidden' name='sapato' value='$sapato'>
-                        <button type='submit' class="button-link">Comprar</button>
-    </form>
+    <form action="carrinho.php" method="post">
+            <input type="hidden" name="product_id" value="1">
+            <input type="hidden" name="product_name" value="Bota Frances Couro Prata">
+            <input type="hidden" name="product_price" value="675.00">
+            <label for="size">Tamanho:</label>
+            <select id="size" name="product_size">
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+            </select>
+            <label for="quantity">Quantidade:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1">
+            <button type="submit" name="action" value="add">Adicionar ao Carrinho</button>
+        </form>
     </div>
     </div>
 

@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="cadastro">
     <div class="formu">
         <h3>Cadastre sua conta</h3>
-        <form action="produto.php" method="post">
+        <form action="" method="post">
         
         <div class="email">
         <label for="email">Email</label>

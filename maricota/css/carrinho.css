@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px; /* Mais espaçamento para um visual mais arejado */
+    border-bottom: 1px solid #e0e0e0; /* Linha sutil abaixo do cabeçalho */
+}
+
+.logo > img {
+    height: 100px; /* Altura reduzida para um ajuste mais harmonioso */
+    width: auto; /* Ajusta a largura automaticamente para manter a proporção */
+}
+
+main {
+    background-color: #ffffff; /* Fundo branco */
+    width: auto;
+    height: auto;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    color: #ffffff; /* Texto branco */
+    background-color: #000000; /* Fundo preto */
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #bdbdbd; /* Borda cinza claro */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+footer {
+    width: auto;
+    background-color: #000000; /* Fundo preto */
+    height: auto;
+    padding: 20px 0;
+    text-align: center;
+    color: #ffffff; /* Texto branco */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-column h3 {
+    border-bottom: 2px solid #ffffff; /* Linha branca */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto branco */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ffffff; /* Texto branco */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #bdbdbd; /* Cor ao passar o mouse */
+}
