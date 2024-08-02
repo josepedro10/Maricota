@@ -18,7 +18,7 @@ header {
 main {
     background-color: #ffffff; /* Fundo branco */
     width: auto;
-    height: auto;
+    height: 1000px;
 }
 
 .button-link {
@@ -34,6 +34,7 @@ main {
     cursor: pointer;
     border-radius: 50px;
 }
+
 
 footer {
     width: auto;
