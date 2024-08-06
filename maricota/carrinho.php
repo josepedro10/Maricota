@@ -17,7 +17,7 @@
 
 <main>
 <h1>Seu Carrinho</h1>
-        <form action="cart.php" method="post">
+        <form action="produto.php" method="post">
             <?php include 'cart.php'; ?>
         </form>
 </main>
