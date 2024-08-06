@@ -34,7 +34,7 @@
             <input type="hidden" name="product_name" value="Bota Frances Couro Prata">
             <input type="hidden" name="product_price" value="675.00">
             <label for="size">Tamanho:</label>
-            <select id="size" name="product_size">
+            <select id="size" name="product_size" class="button-link">
                 <option value="34">34</option>
                 <option value="35">35</option>
                 <option value="36">36</option>
@@ -46,8 +46,8 @@
                 <option value="42">42</option>
             </select>
             <label for="quantity">Quantidade:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1">
-            <button type="submit" name="action" value="add">Adicionar ao Carrinho</button>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" class="button-link">
+            <button type="submit" name="action" value="add" class="button-link">Adicionar ao Carrinho</button>
         </form>
     </div>
     </div>

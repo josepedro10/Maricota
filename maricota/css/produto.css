@@ -42,6 +42,11 @@ main {
     align-items: center;
 }
 
+.formu {
+    display: flex;
+    flex-direction: column;
+}
+
 .descricao {
     width: 350px;
     font-size: 25px;
