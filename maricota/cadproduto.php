@@ -13,12 +13,12 @@ if(isset($_POST["cad-produto"])){
     $quantidade = $_POST["quantidade"];
     $categoria = $_POST["categoria"];
     $tamanhos = $_POST["tamanhos"];
-    $img = $_POST["imagem"];
+    $imgs = $_POST["imgs"];
 
     require "./db.php";
 
 
-    $sql = "INSERT INTO produtos VALUES (DEFAULT, '$nome', '$descricao', '$preco', '$quantidade', '$tamanhos', '$categoria', '$img')";
+    $sql = "INSERT INTO produtos VALUES (DEFAULT, '$nome', '$descricao', '$preco', '$quantidade', '$tamanhos', '$categoria', '$imgs')";
     $stm = $conexao->prepare($sql);
     $stm->execute();
     $res = $stm->fetch();
@@ -70,8 +70,8 @@ if(isset($_POST["cad-produto"])){
             </div>
 
             <div class="imagem">
-                <label for="img">Link para Imagem</label>
-                <input type="text" id="img" name="imagem">
+                <label for="imgs">Link para Imagem</label>
+                <input type="text" id="imgs" name="imgs">
             </div>
             
             <div class="tamanho">

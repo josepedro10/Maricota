@@ -1,9 +1,9 @@
-<<<<<<< HEAD
 header {
     display: flex;
     align-items: center;
     justify-content:space-between;
-=======
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -12,16 +12,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
->>>>>>> 2a885981a40f7437bf16658e2d490579cfaeea4a
-    background-color: #ffffff; /* Cabeçalho branco */
-    padding: 20px 40px; /* Mais espaçamento para um visual mais arejado */
-    border-bottom: 1px solid #e0e0e0; /* Linha sutil abaixo do cabeçalho */
+    background-color: #ffffff; 
+    padding: 20px 40px;
+    border-bottom: 1px solid #e0e0e0; 
 }
 
 .logo > img {
-    height: 100px; /* Altura reduzida para um ajuste mais harmonioso */
-    width: auto; /* Ajusta a largura automaticamente para manter a proporção */
-<<<<<<< HEAD
+    height: 100px; 
+    width: auto; 
+
 }
 
 .search {
@@ -33,18 +32,18 @@ header {
     padding: 10px;
     font-size: 16px;
     width: 300px;
-    border: 1px solid #bdbdbd; /* Borda cinza claro */
-    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #bdbdbd; 
+    background-color: #ffffff; 
     outline: none;
-    margin-right: 10px; /* Espaçamento entre o input e o botão */
+    margin-right: 10px; 
 }
 
 .search button {
     padding: 10px 20px;
     font-size: 16px;
-    border: 1px solid #bdbdbd; /* Borda cinza claro */
-    background-color: #000000; /* Fundo preto */
-    color: #ffffff; /* Texto branco */
+    border: 1px solid #bdbdbd;
+    background-color: #000000; 
+    color: #ffffff; 
     cursor: pointer;
 }
 
@@ -53,8 +52,6 @@ header {
     align-items: center;
 }
 
-=======
-}
 
 .espacamento {
     display: flex;
@@ -71,26 +68,11 @@ h1 {
     margin-left: 650px;
 }
 
-.ac, .carrinho {
-    display: flex;
-    align-items: center;
-}
-
->>>>>>> 2a885981a40f7437bf16658e2d490579cfaeea4a
 .ac > a > img, .carrinho > a > img {
     height: 40px;
-    width: 40px; /* Ajuste para que os ícones fiquem proporcionais */
+    width: 40px;
 }
 
-
-<<<<<<< HEAD
-.carrinho {
-    margin-top: 20px;
-    margin-left: 20px;
-}
-=======
-
->>>>>>> 2a885981a40f7437bf16658e2d490579cfaeea4a
 
 .carrinho > a > img {
     height: 40px;
@@ -98,7 +80,7 @@ h1 {
 }
 
 main {
-    background-color: #ffffff; /* Fundo branco */
+    background-color: #ffffff;
     width: auto;
     height: auto;
 }
@@ -111,7 +93,7 @@ main {
 
 .pr1, .pr2, .pr3, .pr4, .pr5 {
     font-size: 15px;
-    background-color: #ffffff; /* Fundo branco */
+    background-color: #ffffff; 
     align-items: center;
     justify-content: center;
     display: flex;
@@ -120,7 +102,7 @@ main {
     height: auto;
     margin-left: 15px;
     margin-right: 15px;
-    border: 1px solid #bdbdbd; /* Borda cinza claro */
+    border: 1px solid #bdbdbd; 
 }
 
 .pr1 > img, .pr2 > img, .pr3 > img, .pr4 > img, .pr5 > img {
@@ -140,11 +122,11 @@ main {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px 0;
-    color: #ffffff; /* Texto branco */
-    background-color: #000000; /* Fundo preto */
+    color: #ffffff; 
+    background-color: #000000; 
     text-align: center;
     text-decoration: none;
-    border: 1px solid #bdbdbd; /* Borda cinza claro */
+    border: 1px solid #bdbdbd; 
     font-size: 16px;
     cursor: pointer;
     border-radius: 50px;
@@ -152,11 +134,11 @@ main {
 
 footer {
     width: auto;
-    background-color: #000000; /* Fundo preto */
+    background-color: #000000; 
     height: auto;
     padding: 20px 0;
     text-align: center;
-    color: #ffffff; /* Texto branco */
+    color: #ffffff; 
 }
 
 .footer-container {
@@ -175,10 +157,10 @@ footer {
 }
 
 .footer-column h3 {
-    border-bottom: 2px solid #ffffff; /* Linha branca */
+    border-bottom: 2px solid #ffffff; 
     padding-bottom: 10px;
     margin-bottom: 10px;
-    color: #ffffff; /* Texto branco */
+    color: #ffffff; 
 }
 
 .footer-column ul {
@@ -191,11 +173,11 @@ footer {
 }
 
 .footer-column ul li a {
-    color: #ffffff; /* Texto branco */
+    color: #ffffff; 
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-column ul li a:hover {
-    color: #bdbdbd; /* Cor ao passar o mouse */
+    color: #bdbdbd; 
 }

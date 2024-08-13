@@ -33,11 +33,11 @@
 
     <main>
 
-        <h1>Sapatos</h1>
-        <hr>
+    <h1>Sapatos</h1>
+    <hr>
 
 
-        <div class="linha1">
+    <div class="linha1">
 
         <?php 
         require_once "./db.php";
@@ -54,32 +54,20 @@
         ?>
 
         <div class="pr1">
-            <img src="<?php echo $produto["img"]?>" alt="">
+            <img src="<?php echo $produto["imgs"]?>" alt="">
             <p><?php echo $produto["nome"]?></p>
             <p>R$<?php echo $produto["preco"]?></p>
             <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
+                <a href="pagamento.php" class="button-link"> Comprar</a>
                 <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
             </div>
         </div>
 
         <?php }?>
             
+    </div>
 
-
-            <div class="pr1">
-                <img src="./imagens/scarpin-azul.jpg" alt="">
-                <p>Scarpin Azul Couro</p>
-                <p>R$379,90</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="linha1">
+    <div class="linha1">
 
             <div class="pr1">
                 <img src="./imagens/mule-curve.jpg" alt="">
@@ -111,12 +99,12 @@
                 </div>
             </div>
         
-        </div>
+    </div>
 
-        <h1>Tenis</h1>
-        <hr>
+    <h1>Tenis</h1>
+    <hr>
 
-        <div class="linha2">
+    <div class="linha2">
 
         <div class="pr2">
                 <img src="./imagens/tenis-schutz.jpg" alt="">
@@ -159,12 +147,12 @@
         </div>
 
 
-        </div>
+    </div>
 
-        <h1>Sandalias</h1>
-        <hr>
+    <h1>Sandalias</h1>
+    <hr>
 
-        <div class="linha3">
+    <div class="linha3">
 
         <div class="pr3">
                 <img src="./imagens/papete-chain.jpg" alt="">
@@ -215,12 +203,12 @@
                 </div>
             </div>
 
-        </div>
+    </div>
 
-        <h1>Saltos</h1>
-        <hr>
+     <h1>Saltos</h1>
+    <hr>
 
-        <div class="linha4">
+    <div class="linha4">
 
         <div class="pr4">
                 <img src="./imagens/sandalia-preta.jpg" alt="">
@@ -286,14 +274,14 @@
                 </div>
             </div>
 
-        </div>
+    </div>
 
-        <h1>Botas</h1>
-        <hr>
+    <h1>Botas</h1>
+    <hr>
 
-        <div class="linha5">
+    <div class="linha5">
 
-        <div class="pr5">
+            <div class="pr5">
                 <img src="./imagens/bota.jpg" alt="">
                 <p>Bota Frances Couro Prata</p>
                 <p>R$675,00</p>
@@ -302,7 +290,7 @@
                 </div>
             </div>
 
-        </div>
+    </div>
     
     </main>
 
