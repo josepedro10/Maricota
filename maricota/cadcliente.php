@@ -20,7 +20,7 @@
     <div class="cadastro">
     <div class="formu">
         <h3>Cadastre sua conta</h3>
-        <form action="cliente.php" method="post">
+        <form action="" method="POST">
         
         <div class="email">
         <label for="email">Email</label>
@@ -50,12 +50,11 @@
     session_start();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = $_POST['id'];
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
     $cpf = $_POST['cpf'];
 
-    $sql = "INSERT INTO usuarios (id,email, senha, cpf) VALUES ('$id','$email', '$senha', '$cpf')";
+    $sql = "INSERT INTO usuarios (email, senha, cpf) VALUES ('$email', '$senha', '$cpf')";
     
     if ($conn->query($sql) === TRUE) {
         echo "Cadastro realizado com sucesso!";
