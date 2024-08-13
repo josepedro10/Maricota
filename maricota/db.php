@@ -1,14 +1,21 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "maricota";
+<?php 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+define('HOST', 'localhost');
+define('USUARIO', 'root');    
+define('SENHA', '');    
+define('DBNAME', 'maricota');  
+
+
+
+try {
+
+    $conexao = new pdo('mysql:host=' . HOST . ';dbname=' .
+                                     DBNAME, USUARIO, SENHA);
+} catch (PDOException $e) {
+    echo "Erro: Conexão com banco de dados não foi realizada com sucesso.
+     Erro gerado " . $e->getMessage();
 }
+
+
 ?>
-
-

@@ -16,12 +16,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "INSERT INTO produtos (nome, descricao, preco, quantidade, tamanhos) VALUES ('$nome', '$descricao', '$preco', '$quantidade', '$tamanhos')";
     
-    if ($conn->query($sql) === TRUE) {
-        echo "Produto cadastrado com sucesso!";
-    } else {
-        echo "Erro: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
 }
 ?>

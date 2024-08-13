@@ -47,22 +47,6 @@
     $senha = $_POST['password'];
 
     $sql = "SELECT id, email, senha FROM usuarios WHERE email = '$email'";
-    $result =  $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if ($senha == $row['senha']) {
-            $_SESSION['userid'] = $row['id'];
-            header("Location: index.php");
-            exit();
-        } else {
-            echo "Senha incorreta.";
-        }
-    } else {
-        echo "Usuário não encontrado.";
-    }
-
-    $conn->close();
     }
     ?>
 

@@ -4,6 +4,25 @@ if (!isset($_SESSION['userid'])) {
     header("Location: cliente.php");
     exit();
 }
+
+
+if(isset($_POST["cad-produto"])){
+    $nome = $_POST["nome"];
+    $descricao = $_POST["descricao"];
+    $preco = $_POST["preco"];
+    $quantidade = $_POST["quantidade"];
+    $categoria = $_POST["categoria"];
+    $tamanhos = $_POST["tamanhos"];
+    $img = $_POST["imagem"];
+
+    require "./db.php";
+
+
+    $sql = "INSERT INTO produtos VALUES (DEFAULT, '$nome', '$descricao', '$preco', '$quantidade', '$tamanhos', '$categoria', '$img')";
+    $stm = $conexao->prepare($sql);
+    $stm->execute();
+    $res = $stm->fetch();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,35 +43,56 @@ if (!isset($_SESSION['userid'])) {
     <main>
     <div class="container">
         <h1>Cadastro de Produto</h1>
-        <form action="cadastro.php" method="post">
+        <form action="" method="post">
+            <div class="np">
             <label for="nome">Nome do Produto:</label>
             <input type="text" id="nome" name="nome" required>
-            
-            <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao" required></textarea>
-            
-            <label for="preco">Preço:</label>
-            <input type="text" id="preco" name="preco" required>
-            
-            <label for="quantidade">Quantidade:</label>
-            <input type="number" id="quantidade" name="quantidade" required>
-            
-            <label for="tamanhos">Tamanhos Disponíveis:</label>
-            <div class="checkbox-group">
-                <label><input type="checkbox" name="tamanhos[]" value="34"> 34</label>
-                <label><input type="checkbox" name="tamanhos[]" value="35"> 35</label>
-                <label><input type="checkbox" name="tamanhos[]" value="36"> 36</label>
-                <label><input type="checkbox" name="tamanhos[]" value="37"> 37</label>
-                <label><input type="checkbox" name="tamanhos[]" value="38"> 38</label>
-                <label><input type="checkbox" name="tamanhos[]" value="39"> 39</label>
-                <label><input type="checkbox" name="tamanhos[]" value="40"> 40</label>
-                <label><input type="checkbox" name="tamanhos[]" value="41"> 41</label>
-                <label><input type="checkbox" name="tamanhos[]" value="42"> 42</label>
             </div>
             
-            <button type="submit">Cadastrar Produto</button>
+            <div class="desc">
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" required></textarea>
+            </div>
+            
+            <div class="preco">
+            <label for="preco">Preço:</label>
+            <input type="text" id="preco" name="preco" required>
+            </div>
+            
+            <div class="quantidade">
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" required>
+            </div>
+
+            <div class="categoria">
+            <label for="categoria">Categoria</label>
+            <input type="text" id="categoria" name="categoria" required>
+            </div>
+
+            <div class="imagem">
+                <label for="img">Link para Imagem</label>
+                <input type="text" id="img" name="imagem">
+            </div>
+            
+            <div class="tamanho">
+            <label for="tamanhos">Tamanhos Disponíveis:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="tamanhos" value="34"> 34</label>
+                <label><input type="checkbox" name="tamanhos" value="35"> 35</label>
+                <label><input type="checkbox" name="tamanhos" value="36"> 36</label>
+                <label><input type="checkbox" name="tamanhos" value="37"> 37</label>
+                <label><input type="checkbox" name="tamanhos" value="38"> 38</label>
+                <label><input type="checkbox" name="tamanhos" value="39"> 39</label>
+                <label><input type="checkbox" name="tamanhos" value="40"> 40</label>
+                <label><input type="checkbox" name="tamanhos" value="41"> 41</label>
+                <label><input type="checkbox" name="tamanhos" value="42"> 42</label>
+            </div>
+            </div>
+            
+           <div class="cad">
+           <button type="submit" class="button-link" name="cad-produto">Cadastrar Produto</button>
+           </div>
         </form>
-        <a href="logout.php">Logout</a>
     </div>
     </main>
     <footer>

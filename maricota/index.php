@@ -32,45 +32,40 @@
     </header>
 
     <main>
-<<<<<<< HEAD
-    
-=======
 
         <h1>Sapatos</h1>
         <hr>
->>>>>>> 2a885981a40f7437bf16658e2d490579cfaeea4a
+
 
         <div class="linha1">
 
-        <div class="pr1">
-                <img src="./imagens/sapato-mule.jpg" alt="">
-                <p>Mule New Carry</p>
-                <p>R$490,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-            
-        <div class="pr1">
-                <img src="./imagens/sapato-scarpin.jpg" alt="">
-                <p>Scarpin Chain Ornamental</p>
-                <p>R$720,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
+        <?php 
+        require_once "./db.php";
 
-            <div class="pr1">
-                <img src="./imagens/scarpin-vermelho.jpg" alt="">
-                <p>Scarpin Vermelho Couro</p>
-                <p>R$459,90</p>
-                <div class="adicionais">
+        $sql = "SELECT * FROM produtos";
+
+        $stm = $conexao->prepare($sql);
+        
+        $stm->execute();
+
+        $produtos = $stm->fetchAll();
+        
+        foreach ($produtos as $produto) {
+        ?>
+
+        <div class="pr1">
+            <img src="<?php echo $produto["img"]?>" alt="">
+            <p><?php echo $produto["nome"]?></p>
+            <p>R$<?php echo $produto["preco"]?></p>
+            <div class="adicionais">
                 <a href="produto.php" class="button-link"> Comprar</a>
                 <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
             </div>
+        </div>
+
+        <?php }?>
+            
+
 
             <div class="pr1">
                 <img src="./imagens/scarpin-azul.jpg" alt="">
