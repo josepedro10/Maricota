@@ -1,14 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fffff7;
+    padding: 20px 40px; /* Mais espaçamento para um visual mais arejado */
+    border-bottom: 1px solid #e0e0e0; /* Linha sutil abaixo do cabeçalho */
 }
 
 main {
@@ -22,7 +22,7 @@ main {
 }
 
 main {
-    background-color: #eaffd4;
+    background-color: #ffffff;
     width: auto;
     display: flex;
     height: 550px;
@@ -37,7 +37,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #dcf7b6;
+    background-color: #ecf9d9;
     width: 500px;
     height: auto;
     border: 2px  #dcf7b6 solid;
@@ -73,13 +73,14 @@ input[type="email"] {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px 0;
-    color: black;
-    background-color: white;
+    color: #ffffff; /* Texto branco */
+    background-color: #000000; /* Fundo preto */
     text-align: center;
     text-decoration: none;
-    border-radius: 4px;
+    border: 1px solid #bdbdbd; /* Borda cinza claro */
     font-size: 16px;
     cursor: pointer;
+    border-radius: 50px;
 }
 
 .criar {
@@ -88,10 +89,11 @@ input[type="email"] {
 
 footer {
     width: auto;
-    background-color: #b5d593;
+    background-color: #000000; /* Fundo preto */
     height: auto;
     padding: 20px 0;
     text-align: center;
+    color: #ffffff; /* Texto branco */
 }
 
 .footer-container {
@@ -110,9 +112,10 @@ footer {
 }
 
 .footer-column h3 {
-    border-bottom: 2px solid #68ce6f;
+    border-bottom: 2px solid #ffffff; /* Linha branca */
     padding-bottom: 10px;
     margin-bottom: 10px;
+    color: #ffffff; /* Texto branco */
 }
 
 .footer-column ul {
@@ -125,11 +128,11 @@ footer {
 }
 
 .footer-column ul li a {
-    color: #fff;
+    color: #ffffff; /* Texto branco */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-column ul li a:hover {
-    color: #007BFF;
+    color: #bdbdbd; /* Cor ao passar o mouse */
 }

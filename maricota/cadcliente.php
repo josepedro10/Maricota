@@ -1,24 +1,4 @@
-<?php
-include 'db.php';
-session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
-    $cpf = $_POST['cpf']
-
-    $sql = "INSERT INTO usuarios (nome, email, senha, cpf) VALUES ('$nome', '$email', '$senha', '$cpf)";
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "Cadastro realizado com sucesso!";
-    } else {
-        echo "Erro: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="cadastro">
     <div class="formu">
         <h3>Cadastre sua conta</h3>
-        <form action="produto.php" method="post">
+        <form action="" method="POST">
         
         <div class="email">
         <label for="email">Email</label>
@@ -58,11 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="cpf" placeholder="000.000.000-00">
     </div>
 
-    <div class="numero">
-        <label for="telefone">celular</label>
-        <input type="tel" id="phone" name="telefone" placeholder="(00) 00000-0000">
-    </div>
-
     <div class="criar">
     <input type="submit" value="Criar Conta" class="button-link">
     </div>
@@ -70,6 +45,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 
     </div>
+    <?php
+    include 'db.php';
+    session_start();
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+    $cpf = $_POST['cpf'];
+
+    $sql = "INSERT INTO usuarios (email, senha, cpf) VALUES ('$email', '$senha', '$cpf')";
+    
+    if ($conn->query($sql) === TRUE) {
+        echo "Cadastro realizado com sucesso!";
+    } else {
+        echo "Erro: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+    }
+    ?>
     </main>
     
     <footer>
