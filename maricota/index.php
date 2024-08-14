@@ -67,53 +67,20 @@
             
     </div>
 
-    <div class="linha1">
-
-            <div class="pr1">
-                <img src="./imagens/mule-curve.jpg" alt="">
-                <p>Mule Curve Heels Verniz</p>
-                <p>R$790,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-
-            <div class="pr1">
-                <img src="./imagens/mule-veronica.jpg" alt="">
-                <p>Sapato Mule Veronica Pump</p>
-                <p>R$790,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-
-            <div class="pr1">
-                <img src="./imagens/sapato-scarpin.jpg" alt="">
-                <p>Scarpin Slingback Salto Alto</p>
-                <p>R$650,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-        
-    </div>
 
     <h1>Tenis</h1>
     <hr>
 
     <div class="linha2">
 
-        <div class="pr2">
-                <img src="./imagens/tenis-schutz.jpg" alt="">
-                <p>Tênis Schutz ST 001</p>
-                <p>R$590,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
+        <div class="pr1">
+            <img src="<?php echo $produto["imgs"]?>" alt="">
+            <p><?php echo $produto["nome"]?></p>
+            <p>R$<?php echo $produto["preco"]?></p>
+            <div class="adicionais">
+                <a href="pagamento.php" class="button-link"> Comprar</a>
                 <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
+            </div>
         </div>
 
         <div class="pr2">
