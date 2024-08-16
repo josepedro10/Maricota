@@ -121,6 +121,16 @@
 
     <div class="linha3">
 
+        <div class="pr1">
+            <img src="<?php echo $produto["imgs"]?>" alt="">
+            <p><?php echo $produto["nome"]?></p>
+            <p>R$<?php echo $produto["preco"]?></p>
+            <div class="adicionais">
+                <a href="pagamento.php" class="button-link"> Comprar</a>
+                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
+            </div>
+        </div>
+
         <div class="pr3">
                 <img src="./imagens/papete-chain.jpg" alt="">
                 <p>Papete Chain Ornamental</p>
@@ -176,6 +186,16 @@
     <hr>
 
     <div class="linha4">
+
+        <div class="pr1">
+            <img src="<?php echo $produto["imgs"]?>" alt="">
+            <p><?php echo $produto["nome"]?></p>
+            <p>R$<?php echo $produto["preco"]?></p>
+            <div class="adicionais">
+                <a href="pagamento.php" class="button-link"> Comprar</a>
+                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
+            </div>
+        </div>
 
         <div class="pr4">
                 <img src="./imagens/sandalia-preta.jpg" alt="">
@@ -247,6 +267,16 @@
     <hr>
 
     <div class="linha5">
+
+        <div class="pr1">
+            <img src="<?php echo $produto["imgs"]?>" alt="">
+            <p><?php echo $produto["nome"]?></p>
+            <p>R$<?php echo $produto["preco"]?></p>
+            <div class="adicionais">
+                <a href="pagamento.php" class="button-link"> Comprar</a>
+                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
+            </div>
+        </div>
 
             <div class="pr5">
                 <img src="./imagens/bota.jpg" alt="">

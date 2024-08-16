@@ -23,7 +23,7 @@ main {
     background-color: #ffffff;
     width: auto;
     display: flex;
-    height: 550px;
+    height: auto;
     flex-direction: row;
     justify-content: center;
     align-items: center;
