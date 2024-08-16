@@ -58,7 +58,7 @@
             <p><?php echo $produto["nome"]?></p>
             <p>R$<?php echo $produto["preco"]?></p>
             <div class="adicionais">
-                <a href="pagamento.php" class="button-link"> Comprar</a>
+                <a href="prouto.php" class="button-link"> Comprar</a>
                 <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
             </div>
         </div>

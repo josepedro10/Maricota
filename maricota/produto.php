@@ -17,7 +17,21 @@
     
     <main>
 
+
     <?php 
+
+        function findProdutoById($id) {
+            require realpath(__DIR__ . "db.php");
+            $query = $conn->prepare("SELECT * FROM produto WHERE id = :id");
+            $query->bindParam(':id', $id);
+            try {
+                $query->execute();
+                return $query->fetch(PDO::FETCH_ASSOC);
+            }   catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+
         require_once "./db.php";
 
         $sql = "SELECT * FROM produtos";
