@@ -51,19 +51,20 @@
         $produtos = $stm->fetchAll();
         
         foreach ($produtos as $produto) {
+            if($produto["categoria"] == "Sapato"){
         ?>
 
-        <div class="pr1">
+        <form method="get" action="produto.php" class="pr1">
+            <input type="hidden" name="id" value="<?= $produto["id"] ?>">
             <img src="<?php echo $produto["imgs"]?>" alt="">
             <p><?php echo $produto["nome"]?></p>
             <p>R$<?php echo $produto["preco"]?></p>
             <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
+                <button class="button-link"> Comprar</button>
             </div>
-        </div>
+        </form>
 
-        <?php }?>
+        <?php }}?>
             
     </div>
 
@@ -73,36 +74,24 @@
 
     <div class="linha2">
 
+    <?php 
+    foreach ($produtos as $produto) {
+        if($produto["categoria"] == "Tenis"){
+    ?>
 
-        <div class="pr2">
-                <img src="./imagens/tenis-vert.jpg" alt="">
-                <p>Tênis Vert Shoes Esplar</p>
-                <p>R$399,90</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
+    <form method="get" action="produto.php" class="pr2">
+        <input type="hidden" name="id" value="<?= $produto["id"] ?>">
+        <img src="<?php echo $produto["imgs"]?>" alt="">
+        <p><?php echo $produto["nome"]?></p>
+        <p>R$<?php echo $produto["preco"]?></p>
+        <div class="adicionais">
+            <button class="button-link"> Comprar</button>
         </div>
+    </form>
 
-        <div class="pr2">
-                <img src="./imagens/tenis-adidas.jpg" alt="">
-                <p>Tênis Couro adidas</p>
-                <p>$519,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-        </div>
-
-        <div class="pr2">
-                <img src="./imagens/tenis-golden.jpg" alt="">
-                <p>Tênis cano baixo Supersta</p>
-                <p>R$2.309,00</p>
-                <div class="adicionais">9
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-        </div>
+    <?php }}?>
+    
+       
 
 
     </div>
@@ -112,55 +101,23 @@
 
     <div class="linha3">
 
+    <?php 
+    foreach ($produtos as $produto) {
+        if($produto["categoria"] == "Sandalia"){
+    ?>
 
-        <div class="pr3">
-                <img src="./imagens/papete-chain.jpg" alt="">
-                <p>Papete Chain Ornamental</p>
-                <p>R$590,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-        
-        <div class="pr3">
-                <img src="./imagens/papete-brilho.jpg" alt="">
-                <p>Papete Brilho Prata</p>
-                <p>R$470,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-
-        <div class="pr3">
-                <img src="./imagens/papete-dourada.jpg" alt="">
-                <p>Papete Couro Dourada</p>
-                <p>R$345,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-        <div class="pr3">
-                <img src="./imagens/sandalia-papete.jpg" alt="">
-                <p>Papete Tiras Strass Preta</p>
-                <p>R$245,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
+    <form method="get" action="produto.php" class="pr3">
+        <input type="hidden" name="id" value="<?= $produto["id"] ?>">
+        <img src="<?php echo $produto["imgs"]?>" alt="">
+        <p><?php echo $produto["nome"]?></p>
+        <p>R$<?php echo $produto["preco"]?></p>
+        <div class="adicionais">
+            <button class="button-link"> Comprar</button>
         </div>
+    </form>
 
-            <div class="pr3">
-                <img src="./imagens/papete-couro.jpg" alt="">
-                <p>Sandália Papete Couro</p>
-                <p>R$670,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
+    <?php }}?>
+    
 
     </div>
 
@@ -169,106 +126,49 @@
 
     <div class="linha4">
 
-        <div class="pr1">
-            <img src="<?php echo $produto["imgs"]?>" alt="">
-            <p><?php echo $produto["nome"]?></p>
-            <p>R$<?php echo $produto["preco"]?></p>
-            <div class="adicionais">
-                <a href="pagamento.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-            </div>
+    <?php 
+    foreach ($produtos as $produto) {
+        if($produto["categoria"] == "Salto"){
+    ?>
+
+    <form method="get" action="produto.php" class="pr4">
+        <input type="hidden" name="id" value="<?= $produto["id"] ?>">
+        <img src="<?php echo $produto["imgs"]?>" alt="">
+        <p><?php echo $produto["nome"]?></p>
+        <p>R$<?php echo $produto["preco"]?></p>
+        <div class="adicionais">
+            <button class="button-link"> Comprar</button>
         </div>
+    </form>
 
-        <div class="pr4">
-                <img src="./imagens/sandalia-preta.jpg" alt="">
-                <p>Salto Médio Skye Leaf Couro</p>
-                <p>R$590,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-        </div>
-
-            <div class="pr4">
-                <img src="./imagens/sandalia-salto.jpg" alt="">
-                <p>Salto Alto Pamela Verinz</p>
-                <p>R$590,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-
-            <div class="pr4">
-                <img src="./imagens/sandalia-new.jpg" alt="">
-                <p>Sandália New Icon Salto Bloco</p>
-                <p>R$590,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="linha4">
-
-        <div class="pr4">
-                <img src="./imagens/sandalia-branca.jpg" alt="">
-                <p>Sandália Branca Tressê</p>
-                <p>R$439,90</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-
-            <div class="pr4">
-                <img src="./imagens/sandalia-preta.jpg" alt="">
-                <p>Sandália Preta Nobuck</p>
-                <p>R$339,90</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-
-            <div class="pr4">
-                <img src="./imagens/sandalia-prata.jpg" alt="">
-                <p>Sandália Prata Couro</p>
-                <p>R$299,90</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-                </div>
-            </div>
-
+    <?php }}?>
+        
     </div>
 
+        
     <h1>Botas</h1>
     <hr>
 
     <div class="linha5">
 
-        <div class="pr1">
-            <img src="<?php echo $produto["imgs"]?>" alt="">
-            <p><?php echo $produto["nome"]?></p>
-            <p>R$<?php echo $produto["preco"]?></p>
-            <div class="adicionais">
-                <a href="pagamento.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-            </div>
+    <?php 
+    foreach ($produtos as $produto) {
+        if($produto["categoria"] == "Bota"){
+    ?>
+
+    <form method="get" action="produto.php" class="pr5">
+        <input type="hidden" name="id" value="<?= $produto["id"] ?>">
+        <img src="<?php echo $produto["imgs"]?>" alt="">
+        <p><?php echo $produto["nome"]?></p>
+        <p>R$<?php echo $produto["preco"]?></p>
+        <div class="adicionais">
+            <button class="button-link"> Comprar</button>
         </div>
+    </form>
 
-            <div class="pr5">
-                <img src="./imagens/bota.jpg" alt="">
-                <p>Bota Frances Couro Prata</p>
-                <p>R$675,00</p>
-                <div class="adicionais">
-                <a href="produto.php" class="button-link"> Ver detalhes</a>
-                </div>
-            </div>
+    <?php }}?>
 
+    
     </div>
     
     </main>

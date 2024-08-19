@@ -20,29 +20,23 @@
 
     <?php 
 
-        function findProdutoById($id) {
-            require realpath(__DIR__ . "db.php");
-            $query = $conn->prepare("SELECT * FROM produto WHERE id = :id");
+    ini_set("display_errors", 1);
+    require_once "./db.php";
+
+    
+
+        if(isset($_GET["id"])){
+            $id = $_GET["id"];
+            $query = $conexao->prepare("SELECT * FROM produtos WHERE id = :id");
             $query->bindParam(':id', $id);
             try {
                 $query->execute();
-                return $query->fetch(PDO::FETCH_ASSOC);
-            }   catch (Exception $e) {
-                return $e->getMessage();
+                $produto = $query->fetch(PDO::FETCH_ASSOC);
+            }   catch (PDOException $e) {
+                
             }
         }
 
-        require_once "./db.php";
-
-        $sql = "SELECT * FROM produtos";
-
-        $stm = $conexao->prepare($sql);
-        
-        $stm->execute();
-
-        $produtos = $stm->fetchAll();
-        
-        foreach ($produtos as $produto) {
         ?>
 
     <div class="foto">
@@ -79,8 +73,6 @@
         </form>
     </div>
     </div>
-
-        <?php }?>
 
     
 
