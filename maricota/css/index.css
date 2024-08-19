@@ -86,11 +86,13 @@ main {
 }
 
 .linha1, .linha2, .linha3, .linha4, .linha5 {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    max-width: 1500px;
-    min-width: 1500px;
+    max-width: 1200;
+  min-width: 280px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
 }
 
 .pr1, .pr2, .pr3, .pr4, .pr5 {
