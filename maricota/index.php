@@ -58,7 +58,7 @@
             <p><?php echo $produto["nome"]?></p>
             <p>R$<?php echo $produto["preco"]?></p>
             <div class="adicionais">
-                <a href="prouto.php" class="button-link"> Comprar</a>
+                <a href="produto.php" class="button-link"> Comprar</a>
                 <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
             </div>
         </div>
@@ -73,15 +73,6 @@
 
     <div class="linha2">
 
-        <div class="pr1">
-            <img src="<?php echo $produto["imgs"]?>" alt="">
-            <p><?php echo $produto["nome"]?></p>
-            <p>R$<?php echo $produto["preco"]?></p>
-            <div class="adicionais">
-                <a href="pagamento.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-            </div>
-        </div>
 
         <div class="pr2">
                 <img src="./imagens/tenis-vert.jpg" alt="">
@@ -107,7 +98,7 @@
                 <img src="./imagens/tenis-golden.jpg" alt="">
                 <p>Tênis cano baixo Supersta</p>
                 <p>R$2.309,00</p>
-                <div class="adicionais">
+                <div class="adicionais">9
                 <a href="produto.php" class="button-link"> Comprar</a>
                 <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
                 </div>
@@ -121,15 +112,6 @@
 
     <div class="linha3">
 
-        <div class="pr1">
-            <img src="<?php echo $produto["imgs"]?>" alt="">
-            <p><?php echo $produto["nome"]?></p>
-            <p>R$<?php echo $produto["preco"]?></p>
-            <div class="adicionais">
-                <a href="pagamento.php" class="button-link"> Comprar</a>
-                <a href="carrinho.php" class="button-link">Adicionar ao carrinho</a>
-            </div>
-        </div>
 
         <div class="pr3">
                 <img src="./imagens/papete-chain.jpg" alt="">

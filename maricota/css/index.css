@@ -89,6 +89,8 @@ main {
     padding-top: 20px;
     display: flex;
     flex-direction: row;
+    max-width: 1500px;
+    min-width: 1500px;
 }
 
 .pr1, .pr2, .pr3, .pr4, .pr5 {
