@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maricota</title>
-    <link rel="stylesheet" href="./css/listaproduto.css">
+    <link rel="stylesheet" href="./css/listacliente.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 <?php 
   require_once( './db.php');
 
-  $retorno = $conexao->prepare('SELECT * FROM produtos');
+  $retorno = $conexao->prepare('SELECT * FROM usuarios');
 
   $retorno->execute();
 
@@ -28,12 +28,10 @@
         <table> 
             <thead>
                 <tr>
-                    <th>Nome Produto</th>
-                    <th>Descrição</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Categoria</th>
-                    <th>Tamanhos Disponíveis</th>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                    <th>CPF</th>
                 </tr>
             </thead>
 
@@ -41,14 +39,13 @@
                 <tr> 
                     <?php foreach($retorno->fetchall() as $value) { ?>
                         <tr> 
-                            <td> <?php echo $value['nome']?>  </td> 
-                            <td> <?php echo $value['descricao']?> </td> 
-                            <td> <?php echo $value['preco']?> </td> 
-                            <td> <?php echo $value['quantidade']?> </td> 
-                            <td> <?php echo $value['tamanhos']?> </td>  
+                            <td> <?php echo $value['id']?>  </td> 
+                            <td> <?php echo $value['email']?> </td> 
+                            <td> <?php echo $value['senha']?> </td> 
+                            <td> <?php echo $value['cpf']?> </td>  
 
                             <td>
-                               <form method="POST" action="cadproduto.php">
+                               <form method="POST" action="cadcliente.php">
                                         <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
                                         <button name="alterar"  type="submit">Alterar</button>
                                 </form>

@@ -52,11 +52,11 @@
 
     <div class="formu">
     <form action="carrinho.php" method="post">
-            <input type="hidden" name="product_id" value="1">
-            <input type="hidden" name="product_name" value="Bota Frances Couro Prata">
-            <input type="hidden" name="product_price" value="675.00">
+            <input type="hidden" name="id" value="<?php echo $produto["id"] ?>">
+            <input type="hidden" name="nome" value="<?php echo $produto["nome"] ?>">
+            <input type="hidden" name="preco" value="<?php echo $produto["preco"] ?>">
             <label for="size">Tamanho:</label>
-            <select id="size" name="product_size" class="button-link">
+            <select id="size" name="tamanho" class="button-link">
                 <option value="34">34</option>
                 <option value="35">35</option>
                 <option value="36">36</option>
@@ -67,8 +67,8 @@
                 <option value="41">41</option>
                 <option value="42">42</option>
             </select>
-            <label for="quantity">Quantidade:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" class="button-link">
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" value="1" min="1" class="button-link">
             <button type="submit" name="action" value="add" class="button-link">Adicionar ao Carrinho</button>
         </form>
     </div>

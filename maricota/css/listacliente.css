@@ -18,7 +18,23 @@ header {
 main {
     background-color: #ffffff; /* Fundo branco */
     width: auto;
-    height: 1000px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    border:5px solid rgb(87, 75, 75);
+    border-radius: 10px;
+    width: 65%;
+    margin-bottom: 200px;
+  }
+
+th, td {
+    padding: 8px;
+    width: 10%;
+    border: 1px solid black;
 }
 
 .button-link {
