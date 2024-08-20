@@ -13,6 +13,15 @@
         </div>
 
        <div class="espacamento">
+
+       <div class="lista">
+        <a href="listaproduto.php" class="button-link">Lista Produto</a>
+       </div>
+
+        <div class="lista">
+            <a href="listacliente.php" class="button-link">Lista Cliente</a>
+        </div>
+
        <div class="search">
         <a href="cadproduto.php" class="button-link">Cadastre seu produto</a>
         </div>

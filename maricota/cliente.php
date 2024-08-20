@@ -18,24 +18,27 @@
     
     <main>
         <div class="formu">
-        <h3>Acesse sua conta</h3>
-        <form action="" method="post">
+            <h3>Acesse sua conta</h3>
+            <form action="" method="post">
         
-        <div class="email">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        </div>
+            <div class="email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
         
-       <div class="senha">
-       <label for="password">Senha</label>
-       <input type="password" id="password" name="password" placeholder="Senha" required>
-       </div>
+            <div class="senha">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Senha" required>
+            </div>
         
-       <div class="entrar">
-        <input type="submit" value="Entrar" class="button-link">
-       </div>
-        </form>
-        <a href="cadcliente.php" class="button-link">Cadastrar conta</a>
+            <div class="entrar">
+            <input type="submit" value="Entrar" class="button-link">
+            </div>
+            </form>
+            <a href="cadcliente.php" class="button-link">Cadastrar conta</a>
+            <div class="volta">
+            <a href='index.php' class="button-link">voltar</a>
+            </div>
         </div>
         
         <?php
@@ -49,7 +52,6 @@
     $sql = "SELECT id, email, senha FROM usuarios WHERE email = '$email'";
     }
     ?>
-
     </main>
     
     <footer>

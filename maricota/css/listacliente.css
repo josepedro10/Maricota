@@ -18,10 +18,11 @@ header {
 main {
     background-color: #ffffff; /* Fundo branco */
     width: auto;
-    height: 500px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 table {
@@ -35,6 +36,10 @@ th, td {
     padding: 8px;
     width: 10%;
     border: 1px solid black;
+}
+
+td {
+    padding-left: 50px;
 }
 
 .button-link {

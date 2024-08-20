@@ -51,7 +51,7 @@
     </div>
 
     <div class="formu">
-    <form action="carrinho.php" method="post">
+        <form action="carrinho.php" method="post">
             <input type="hidden" name="id" value="<?php echo $produto["id"] ?>">
             <input type="hidden" name="nome" value="<?php echo $produto["nome"] ?>">
             <input type="hidden" name="preco" value="<?php echo $produto["preco"] ?>">
@@ -71,10 +71,11 @@
             <input type="number" id="quantidade" name="quantidade" value="1" min="1" class="button-link">
             <button type="submit" name="action" value="add" class="button-link">Adicionar ao Carrinho</button>
         </form>
+        <div class="voltar">
+        <a href='index.php' class="button-link">voltar</a>
+        </div>
     </div>
     </div>
-
-    
 
     </main>
 

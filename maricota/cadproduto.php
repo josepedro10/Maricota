@@ -62,8 +62,15 @@ if(isset($_POST["cad-produto"])){
             </div>
 
             <div class="categoria">
-            <label for="categoria">Categoria</label>
-            <input type="text" id="categoria" name="categoria" required>
+            <label for="tipo">Tipo de categoria:</label>
+            <select id="categoria" name="categoria">
+            <option value="">Selecione uma categoria existente</option>
+            <option value="Sapato">Sapato</option>
+            <option value="Tenis">Tenis</option>
+            <option value="Sandalia">Sandalia</option>
+            <option value="Salto">Salto</option>
+            <option value="Bota">Bota</option>
+            </select>
             </div>
 
             <div class="imagem">
@@ -90,7 +97,12 @@ if(isset($_POST["cad-produto"])){
            <button type="submit" class="button-link" name="cad-produto">Cadastrar Produto</button>
            </div>
         </form>
+        <div class="voltar">
+        <a href='index.php' class="button-link">voltar</a>
+        </div>
     </div>
+    
+
     </main>
     <footer>
     <div class="footer-container">

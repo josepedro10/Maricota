@@ -42,6 +42,10 @@
                     <div class="criar">
                         <input type="submit" value="Criar Conta" class="button-link" name="cadastrar">
                     </div>
+                    
+<div class="voltar">
+<a href='index.php' class="button-link">voltar</a>
+</div>
             </div>
         </div>
 
@@ -61,6 +65,7 @@
             $res = $stm->fetch();
         }
         ?>
+        
     </main>
 
     <footer>

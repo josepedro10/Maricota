@@ -20,6 +20,11 @@
         <form action="produto.php" method="post">
             <?php include 'cart.php'; ?>
         </form>
+
+        
+<div class="voltar">
+<a href='index.php' class="button-link">voltar</a>
+</div>
 </main>
 
 <footer>
