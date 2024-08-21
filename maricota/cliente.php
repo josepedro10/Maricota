@@ -20,6 +20,11 @@
         <div class="formu">
             <h3>Acesse sua conta</h3>
             <form action="" method="post">
+
+            <div class="nome">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="nome" required>
+            </div>
         
             <div class="email">
             <label for="email">Email</label>
@@ -48,8 +53,9 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $senha = $_POST['password'];
+    $nome = $_POST['nome'];
 
-    $sql = "SELECT id, email, senha FROM usuarios WHERE email = '$email'";
+    $sql = "SELECT id, email, senha, nome FROM usuarios WHERE email = '$email'";
     }
     ?>
     </main>

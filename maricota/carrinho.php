@@ -16,8 +16,10 @@
 </header>
 
 <main>
+<div class="h">
 <h1>Seu Carrinho</h1>
-        <form action="produto.php" method="post">
+</div>
+        <form action="" method="post">
             <?php include 'cart.php'; ?>
         </form>
 

@@ -51,10 +51,12 @@
                             <td> <?php echo $value['categoria']?> </td> 
 
                             <td>
-                               <form method="POST" action="cadproduto.php">
+                               <form method="POST" action="">
                                         <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
                                         <button name="alterar"  type="submit" class="button-link">Alterar</button>
                                 </form>
+
+                                <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
 
                              </td> 
                     <?php  }  ?> 

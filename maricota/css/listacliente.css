@@ -26,20 +26,23 @@ main {
 }
 
 table {
-    border:5px solid rgb(87, 75, 75);
+    border: 1px solid #574b4b;
     border-radius: 10px;
-    width: 65%;
-    margin-bottom: 200px;
-  }
+    width: 80%; /* Alarga a tabela para melhor ocupação de espaço */
+    margin-bottom: 50px; /* Espaçamento reduzido para maior simetria */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra para profundidade */
+    background-color: #fafafa; /* Fundo claro para contrastar com bordas */
+}
 
 th, td {
-    padding: 8px;
-    width: 10%;
-    border: 1px solid black;
+    padding: 12px; /* Maior espaço para conteúdo */
+    width: auto; /* Flexibilidade de largura */
+    text-align: left; /* Alinhamento de texto para legibilidade */
+    border: 1px solid #ccc; /* Cor da borda suavizada */
 }
 
 td {
-    padding-left: 50px;
+    padding-left: 20px;
 }
 
 .button-link {

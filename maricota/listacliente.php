@@ -31,6 +31,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Nome</th>
                     <th>Email</th>
                     <th>Senha</th>
                     <th>CPF</th>
@@ -41,16 +42,19 @@
                 <tr> 
                     <?php foreach($retorno->fetchall() as $value) { ?>
                         <tr> 
-                            <td> <?php echo $value['id']?>  </td> 
+                            <td> <?php echo $value['id']?>  </td>
+                            <td><?php echo $value['nome']?></td> 
                             <td> <?php echo $value['email']?> </td> 
                             <td> <?php echo $value['senha']?> </td> 
                             <td> <?php echo $value['cpf']?> </td>  
 
                             <td>
-                               <form method="POST" action="cadcliente.php">
+                               <form method="POST" action="">
                                         <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
                                         <button name="alterar"  type="submit" class="button-link">Alterar</button>
                                 </form>
+
+                                <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
 
                              </td> 
                     <?php  }  ?> 

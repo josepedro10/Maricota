@@ -23,6 +23,11 @@
                 <h3>Cadastre sua conta</h3>
                 <form action="" method="POST">
 
+                    <div class="nome">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="nome" required>
+                    </div>
+
                     <div class="email">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="email" required>
@@ -58,8 +63,9 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
             $cpf = $_POST['cpf'];
+            $nome = $_POST['nome'];
 
-            $sql = "INSERT INTO usuarios (email, senha, cpf) VALUES ('$email', '$password', '$cpf')";
+            $sql = "INSERT INTO usuarios (email, senha, cpf, nome) VALUES ('$email', '$password', '$cpf', '$nome')";
             $stm = $conexao->prepare($sql);
             $stm->execute();
             $res = $stm->fetch();
