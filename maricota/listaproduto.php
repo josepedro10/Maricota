@@ -56,7 +56,10 @@
                                         <button name="alterar"  type="submit" class="button-link">Alterar</button>
                                 </form>
 
+                                <form action="" method="post">
+                                <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
                                 <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
+                                </form>
 
                              </td> 
                     <?php  }  ?> 

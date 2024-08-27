@@ -49,12 +49,15 @@
                             <td> <?php echo $value['cpf']?> </td>  
 
                             <td>
-                               <form method="POST" action="">
-                                        <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
-                                        <button name="alterar"  type="submit" class="button-link">Alterar</button>
+                               <form method="get" action="edtcliente.php">
+                                    <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
+                                    <button name="alterar"  type="submit" class="button-link">Alterar</button>
                                 </form>
 
+                                <form action="crudcliente.php" method="post">
+                                <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
                                 <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
+                                </form>
 
                              </td> 
                     <?php  }  ?> 
