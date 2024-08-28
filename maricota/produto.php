@@ -25,10 +25,10 @@
 
     
 
-        if(isset($_GET["id"])){
-            $id = $_GET["id"];
-            $query = $conexao->prepare("SELECT * FROM produtos WHERE id = :id");
-            $query->bindParam(':id', $id);
+        if(isset($_GET["id_produto"])){
+            $id = $_GET["id_produto"];
+            $query = $conexao->prepare("SELECT * FROM produtos WHERE id_produto = :id_produto");
+            $query->bindParam(':id_produto', $id_produto);
             try {
                 $query->execute();
                 $produto = $query->fetch(PDO::FETCH_ASSOC);

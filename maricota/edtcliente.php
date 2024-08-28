@@ -3,11 +3,11 @@ require_once('./db.php');
 session_start();
 
 // Verifica se o ID foi passado na URL
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+if (isset($_GET['id_cliente'])) {
+    $id = $_GET['id_cliente'];
 
     // Consulta ao banco de dados para obter os dados do cliente
-    $sql = "SELECT * FROM usuarios WHERE id = :id";
+    $sql = "SELECT * FROM usuarios WHERE id_cliente = :id_cliente";
     $retorno = $conexao->prepare($sql);
     $retorno->bindParam(':id', $id, PDO::PARAM_INT);
     $retorno->execute();
@@ -66,7 +66,7 @@ if (isset($_POST["cadastrar"])) {
                 <h3>Cadastre sua conta</h3>
                 <form action="" method="POST">
 
-                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                    <input type="hidden" name="id" value="<?php echo $id_cliente; ?>">
 
                     <div class="nome">
                         <label for="nome">Nome</label>

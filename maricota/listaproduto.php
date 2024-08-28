@@ -43,7 +43,7 @@
                 <tr> 
                     <?php foreach($retorno->fetchall() as $value) { ?>
                         <tr> 
-                            <td> <?php echo $value['id']?>  </td> 
+                            <td> <?php echo $value['id_produto']?>  </td> 
                             <td> <?php echo $value['nome']?> </td> 
                             <td> <?php echo $value['descricao']?> </td> 
                             <td> <?php echo $value['preco']?> </td> 
@@ -51,13 +51,13 @@
                             <td> <?php echo $value['categoria']?> </td> 
 
                             <td>
-                               <form method="POST" action="">
-                                        <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
-                                        <button name="alterar"  type="submit" class="button-link">Alterar</button>
+                            <form method="get" action="edtproduto.php">
+                                    <input name="id" type="hidden" value="<?php echo $value['id_produto'];?>"/>
+                                    <button name="alterar"  type="submit" class="button-link">Alterar</button>
                                 </form>
 
-                                <form action="" method="post">
-                                <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
+                                <form action="crudproduto.php" method="post">
+                                <input name="id" type="hidden" value="<?php echo $value['id_produto'];?>"/>
                                 <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
                                 </form>
 

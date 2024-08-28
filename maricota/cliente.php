@@ -55,7 +55,7 @@
     $senha = $_POST['password'];
     $nome = $_POST['nome'];
 
-    $sql = "SELECT id, email, senha, nome FROM usuarios WHERE email = '$email'";
+    $sql = "SELECT id_cliente, email, senha, nome FROM usuarios WHERE email = '$email'";
     }
     ?>
     </main>
