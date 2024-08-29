@@ -46,7 +46,7 @@
 
     <div class="formu">
         <form action="carrinho.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $produto["id_produto"] ?>">
+            <input type="hidden" name="id" value="<?php echo $produto["id"] ?>">
             <input type="hidden" name="nome" value="<?php echo $produto["nome"] ?>">
             <input type="hidden" name="preco" value="<?php echo $produto["preco"] ?>">
             <label for="size">Tamanho:</label>

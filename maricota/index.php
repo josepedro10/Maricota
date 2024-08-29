@@ -64,7 +64,7 @@
         ?>
 
         <form method="get" action="produto.php" class="pr1">
-            <input type="hidden" name="id" value="<?= $produto["id_produto"] ?>">
+            <input type="hidden" name="id" value="<?= $produto["id"] ?>">
             <img src="<?php echo $produto["imgs"]?>" alt="">
             <p><?php echo $produto["nome"]?></p>
             <p>R$<?php echo $produto["preco"]?></p>
@@ -89,7 +89,7 @@
     ?>
 
     <form method="get" action="produto.php" class="pr2">
-        <input type="hidden" name="id" value="<?= $produto["id_produto"] ?>">
+        <input type="hidden" name="id" value="<?= $produto["id"] ?>">
         <img src="<?php echo $produto["imgs"]?>" alt="">
         <p><?php echo $produto["nome"]?></p>
         <p>R$<?php echo $produto["preco"]?></p>
@@ -116,7 +116,7 @@
     ?>
 
     <form method="get" action="produto.php" class="pr3">
-        <input type="hidden" name="id" value="<?= $produto["id_produto"] ?>">
+        <input type="hidden" name="id" value="<?= $produto["id"] ?>">
         <img src="<?php echo $produto["imgs"]?>" alt="">
         <p><?php echo $produto["nome"]?></p>
         <p>R$<?php echo $produto["preco"]?></p>
@@ -141,7 +141,7 @@
     ?>
 
     <form method="get" action="produto.php" class="pr4">
-        <input type="hidden" name="id" value="<?= $produto["id_produto"] ?>">
+        <input type="hidden" name="id" value="<?= $produto["id"] ?>">
         <img src="<?php echo $produto["imgs"]?>" alt="">
         <p><?php echo $produto["nome"]?></p>
         <p>R$<?php echo $produto["preco"]?></p>
@@ -166,7 +166,7 @@
     ?>
 
     <form method="get" action="produto.php" class="pr5">
-        <input type="hidden" name="id" value="<?= $produto["id_produto"] ?>">
+        <input type="hidden" name="id" value="<?= $produto["id"] ?>">
         <img src="<?php echo $produto["imgs"]?>" alt="">
         <p><?php echo $produto["nome"]?></p>
         <p>R$<?php echo $produto["preco"]?></p>
