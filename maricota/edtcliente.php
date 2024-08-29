@@ -7,7 +7,7 @@ if (isset($_GET['id_cliente'])) {
     $id = $_GET['id_cliente'];
 
     // Consulta ao banco de dados para obter os dados do cliente
-    $sql = "SELECT * FROM usuarios WHERE id_cliente = :id_cliente";
+    $sql = "SELECT * FROM usuarios WHERE id_cliente = :id";
     $retorno = $conexao->prepare($sql);
     $retorno->bindParam(':id', $id, PDO::PARAM_INT);
     $retorno->execute();
@@ -20,10 +20,7 @@ if (isset($_GET['id_cliente'])) {
     $password = $array_retorno['senha'] ?? ''; // Corrigi para 'senha' se for o nome correto no BD
     $email = $array_retorno['email'] ?? '';
     $cpf = $array_retorno['cpf'] ?? '';
-} else {
-    die("ID do cliente não definido.");
-}
-
+} 
 if (isset($_POST["cadastrar"])) {
     $email = $_POST['email'];
     $password = $_POST['password'];

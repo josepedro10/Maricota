@@ -19,7 +19,7 @@
     <main>
         <div class="formu">
             <h3>Acesse sua conta</h3>
-            <form action="" method="post">
+            <form action="crudacesso.php" method="post">
 
             <div class="nome">
             <label for="nome">Nome</label>
@@ -45,19 +45,6 @@
             <a href='index.php' class="button-link">voltar</a>
             </div>
         </div>
-        
-        <?php
-    include 'db.php';
-    session_start();
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email'];
-    $senha = $_POST['password'];
-    $nome = $_POST['nome'];
-
-    $sql = "SELECT id_cliente, email, senha, nome FROM usuarios WHERE email = '$email'";
-    }
-    ?>
     </main>
     
     <footer>

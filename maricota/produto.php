@@ -1,3 +1,20 @@
+<?php 
+
+    require_once "./db.php";
+
+        if(isset($_GET["id_produto"])){
+            $id = $_GET["id_produto"];
+            $query = $conexao->prepare("SELECT * FROM produtos WHERE id_produto = :id");
+            $query->bindParam(':id', $id);
+            try {
+                $query->execute();
+                $produto = $query->fetch(PDO::FETCH_ASSOC);
+            }   catch (PDOException $e) {
+                
+            }
+        }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,29 +33,6 @@
     </header>
     
     <main>
-
-
-    <?php 
-
-    ini_set("display_errors", 1);
-    require_once "./db.php";
-
-    
-
-        if(isset($_GET["id_produto"])){
-            $id = $_GET["id_produto"];
-            $query = $conexao->prepare("SELECT * FROM produtos WHERE id_produto = :id_produto");
-            $query->bindParam(':id_produto', $id_produto);
-            try {
-                $query->execute();
-                $produto = $query->fetch(PDO::FETCH_ASSOC);
-            }   catch (PDOException $e) {
-                
-            }
-        }
-
-        ?>
-
     <div class="foto">
     <img src="<?php echo $produto["imgs"]?>" alt="">
     </div>
@@ -52,7 +46,7 @@
 
     <div class="formu">
         <form action="carrinho.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $produto["id"] ?>">
+            <input type="hidden" name="id" value="<?php echo $produto["id_produto"] ?>">
             <input type="hidden" name="nome" value="<?php echo $produto["nome"] ?>">
             <input type="hidden" name="preco" value="<?php echo $produto["preco"] ?>">
             <label for="size">Tamanho:</label>

@@ -1,26 +1,3 @@
-<?php
-session_start();
-
-
-
-if(isset($_POST["cad-produto"])){
-    $nome = $_POST["nome"];
-    $descricao = $_POST["descricao"];
-    $preco = $_POST["preco"];
-    $quantidade = $_POST["quantidade"];
-    $categoria = $_POST["categoria"];
-    $tamanhos = $_POST["tamanhos"];
-    $imgs = $_POST["imgs"];
-
-    require "./db.php";
-
-
-    $sql = "INSERT INTO produtos VALUES (DEFAULT, '$nome', '$descricao', '$preco', '$quantidade', '$tamanhos', '$categoria', '$imgs')";
-    $stm = $conexao->prepare($sql);
-    $stm->execute();
-    $res = $stm->fetch();
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -40,7 +17,7 @@ if(isset($_POST["cad-produto"])){
     <main>
     <div class="container">
         <h1>Cadastro de Produto</h1>
-        <form action="" method="post">
+        <form action="crudcadproduto.php" method="post">
             <div class="np">
             <label for="nome">Nome do Produto:</label>
             <input type="text" id="nome" name="nome" required>

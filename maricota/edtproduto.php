@@ -1,3 +1,48 @@
+<?php
+require_once('./db.php');
+session_start();
+
+// Verifica se o ID foi passado na URL
+if (isset($_GET['id_produto'])) {
+    $id = $_GET['id_produto'];
+
+    // Consulta ao banco de dados para obter os dados do cliente
+    $sql = "SELECT * FROM produtos WHERE id_produto = :id";
+    $retorno = $conexao->prepare($sql);
+    $retorno->bindParam(':id', $id, PDO::PARAM_INT);
+    $retorno->execute();
+
+    // Transforma o retorno em array
+    $array_retorno = $retorno->fetch();
+
+    // Armazena retorno em variáveis, evitando erro caso a chave não exista
+    $nome = $array_retorno['nome'] ?? '';
+    $descricao = $array_retorno['descricao'] ?? '';
+    $preco = $array_retorno['preco'] ?? '';
+    $quantidade = $array_retorno['quantidade'] ?? '';
+    $categoria = $array_retorno['categoria'] ?? '';
+} 
+
+
+
+if(isset($_POST["cad-produto"])){
+    $nome = $_POST["nome"];
+    $descricao = $_POST["descricao"];
+    $preco = $_POST["preco"];
+    $quantidade = $_POST["quantidade"];
+    $categoria = $_POST["categoria"];
+    $tamanhos = $_POST["tamanhos"];
+    $imgs = $_POST["imgs"];
+
+    require "./db.php";
+
+
+    $sql = "INSERT INTO produtos VALUES (DEFAULT, '$nome', '$descricao', '$preco', '$quantidade', '$tamanhos', '$categoria', '$imgs')";
+    $stm = $conexao->prepare($sql);
+    $stm->execute();
+    $res = $stm->fetch();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,7 +73,7 @@
             
             <div class="desc">
             <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao" required  value="<?php echo $descricao; ?>"></textarea>
+            <input id="descricao" name="descricao" required  value="<?php echo $descricao; ?>"></input>
             </div>
             
             <div class="preco">

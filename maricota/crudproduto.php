@@ -3,14 +3,14 @@ require_once('./db.php');
 
 if(isset($_POST['delete'])){
 
-    $id_produto = $_POST['id_produto'];
+    $id = $_POST['id'];
 
     // Use o parâmetro nomeado :id na consulta SQL
-    $sql = "DELETE FROM usuarios WHERE id_produto = :id_produto";
+    $sql = "DELETE FROM produtos WHERE id_produto = :id";
 
     $sqlcombanco = $conexao->prepare($sql);
     // Vincula o parâmetro :id corretamente
-    $sqlcombanco->bindParam(':id_produto', $id_produto, PDO::PARAM_INT);
+    $sqlcombanco->bindParam(':id', $id, PDO::PARAM_INT);
 
     // Execute a consulta apenas uma vez
     if($sqlcombanco->execute()) {

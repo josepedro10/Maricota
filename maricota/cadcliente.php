@@ -21,7 +21,7 @@
         <div class="cadastro">
             <div class="formu">
                 <h3>Cadastre sua conta</h3>
-                <form action="" method="POST">
+                <form action="crudcadcliente.php" method="POST">
 
                     <div class="nome">
                     <label for="nome">Nome</label>
@@ -55,22 +55,6 @@
         </div>
 
         </div>
-        <?php
-        require_once('./db.php');
-        session_start();
-
-        if (isset($_POST["cadastrar"])) {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $cpf = $_POST['cpf'];
-            $nome = $_POST['nome'];
-
-            $sql = "INSERT INTO usuarios (email, senha, cpf, nome) VALUES ('$email', '$password', '$cpf', '$nome')";
-            $stm = $conexao->prepare($sql);
-            $stm->execute();
-            $res = $stm->fetch();
-        }
-        ?>
         
     </main>
 
