@@ -22,7 +22,7 @@
 <?php 
   require_once( './db.php');
 
-  $retorno = $conexao->prepare('SELECT * FROM produtos');
+  $retorno = $conexao->prepare('SELECT * FROM pagamento');
 
   $retorno->execute();
 

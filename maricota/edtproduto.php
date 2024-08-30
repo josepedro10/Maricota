@@ -3,11 +3,11 @@ require_once('./db.php');
 session_start();
 
 // Verifica se o ID foi passado na URL
-if (isset($_GET['id_produto'])) {
-    $id = $_GET['id_produto'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
     // Consulta ao banco de dados para obter os dados do cliente
-    $sql = "SELECT * FROM produtos WHERE id_produto = :id";
+    $sql = "SELECT * FROM produtos WHERE id = :id";
     $retorno = $conexao->prepare($sql);
     $retorno->bindParam(':id', $id, PDO::PARAM_INT);
     $retorno->execute();
@@ -64,7 +64,7 @@ if(isset($_POST["cad-produto"])){
         <h1>Cadastro de Produto</h1>
         <form action="" method="post">
 
-        <input type="hidden" name="id" value="<?php echo $id_produto; ?>">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
 
             <div class="np">
             <label for="nome">Nome do Produto:</label>
@@ -88,7 +88,7 @@ if(isset($_POST["cad-produto"])){
 
             <div class="categoria">
             <label for="tipo">Tipo de categoria:</label>
-            <select id="categoria" name="categoria"  value="<?php echo $categoria; ?>">
+            <select id="categoria" name="categoria" >
             <option value="">Selecione uma categoria existente</option>
             <option value="Sapato">Sapato</option>
             <option value="Tenis">Tenis</option>
@@ -100,7 +100,7 @@ if(isset($_POST["cad-produto"])){
 
             <div class="imagem">
                 <label for="imgs">Link para Imagem</label>
-                <input type="text" id="imgs" name="imgs"  value="<?php echo $imgs; ?>">
+                <input type="text" id="imgs" name="imgs"  >
             </div>
             
             <div class="tamanho">

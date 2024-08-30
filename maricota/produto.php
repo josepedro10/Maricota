@@ -2,9 +2,9 @@
 
     require_once "./db.php";
 
-        if(isset($_GET["id_produto"])){
-            $id = $_GET["id_produto"];
-            $query = $conexao->prepare("SELECT * FROM produtos WHERE id_produto = :id");
+        if(isset($_GET["id"])){
+            $id = $_GET["id"];
+            $query = $conexao->prepare("SELECT * FROM produtos WHERE id = :id");
             $query->bindParam(':id', $id);
             try {
                 $query->execute();
@@ -13,6 +13,7 @@
                 
             }
         }
+
 
 ?>
 <!DOCTYPE html>

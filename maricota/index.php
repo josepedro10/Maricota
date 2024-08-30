@@ -14,6 +14,10 @@
 
        <div class="espacamento">
 
+       <div class="pagamento">
+       <a href="listapagamento.php" class="button-link">Lista Pagamento</a>
+       </div>
+
        <div class="lista">
         <a href="listaproduto.php" class="button-link">Lista Produto</a>
        </div>

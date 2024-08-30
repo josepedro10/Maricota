@@ -1,3 +1,4 @@
+
 <?php
 
 require_once "./db.php";
@@ -10,16 +11,16 @@ if (!isset($_SESSION['cart'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = $_POST['id_produto'];
-    $nome = $_POST['nome'];
-    $preco = $_POST['preco'];
-    $quantidade = $_POST['quantidade'];
-    $tamanho = $_POST['tamanho'];
+    $id = isset($_POST['id']) ? $_POST['id'] : '';
+    $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+    $preco = isset($_POST['preco']) ? $_POST['preco'] : '';
+    $quantidade = isset($_POST['quantidade']) ? $_POST['quantidade'] : 0;
+    $tamanho = isset($_POST['tamanho']) ? $_POST['tamanho'] : '';
 
     // Gera uma chave única para o item do carrinho, com base no ID e tamanho
     $cart_key = $id . '_' . $tamanho;
 
-    if ($_POST['action'] == 'add') {
+    if (isset($_POST['action']) && $_POST['action'] == 'add') {
         // Adiciona ou atualiza a quantidade do item no carrinho
         if (isset($_SESSION['cart'][$cart_key])) {
             $_SESSION['cart'][$cart_key]['quantidade'] += $quantidade;
@@ -31,13 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'tamanho' => $tamanho
             );
         }
-    } elseif ($_POST['action'] == 'update') {
+    } elseif (isset($_POST['action']) && $_POST['action'] == 'update') {
         // Atualiza a quantidade e o tamanho do item no carrinho
         if (isset($_SESSION['cart'][$cart_key])) {
             $_SESSION['cart'][$cart_key]['quantidade'] = $quantidade;
             $_SESSION['cart'][$cart_key]['tamanho'] = $tamanho;
         }
-    } elseif ($_POST['action'] == 'remove') {
+    } elseif (isset($_POST['action']) && $_POST['action'] == 'remove') {
         // Remove o item do carrinho
         if (isset($_SESSION['cart'][$cart_key])) {
             unset($_SESSION['cart'][$cart_key]);
@@ -65,7 +66,10 @@ if (!empty($_SESSION['cart'])) {
                     <option value='42' " . ($produto['tamanho'] == '42' ? 'selected' : '') . ">42</option>
                 </select>
                 <button type='submit' name='action' value='update' class='button-link'>Atualizar</button>
-                <button type='submit' name='action' value='remove' class='button-link'>Remover</button>
+                <form action='crudproduto.php' method='post'>
+                    <input name='id' type='hidden' value='{$id}'>
+                    <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
+                </form>
               </div>";
     }
 } else {

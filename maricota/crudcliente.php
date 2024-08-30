@@ -6,7 +6,7 @@ if(isset($_POST['delete'])){
     $id = $_POST['id'];
 
     // Use o parâmetro nomeado :id na consulta SQL
-    $sql = "DELETE FROM usuarios WHERE id_cliente = :id";
+    $sql = "DELETE FROM usuarios WHERE id = :id";
 
     $sqlcombanco = $conexao->prepare($sql);
     // Vincula o parâmetro :id corretamente
