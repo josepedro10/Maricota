@@ -66,9 +66,10 @@ if (!empty($_SESSION['cart'])) {
                     <option value='42' " . ($produto['tamanho'] == '42' ? 'selected' : '') . ">42</option>
                 </select>
                 <button type='submit' name='action' value='update' class='button-link'>Atualizar</button>
-                <form action='crudproduto.php' method='post'>
+                <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
+                <form action='pagamento.php' method='post'>
                     <input name='id' type='hidden' value='{$id}'>
-                    <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
+                    <button type='submit' name='salvar' value='salvar' class='button-link'>Comprar</button>
                 </form>
               </div>";
     }

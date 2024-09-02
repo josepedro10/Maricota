@@ -31,11 +31,14 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Categoria</th>
+                    <th>Nome Completo</th>
+                    <th>Email</th>
+                    <th>Endereço</th>
+                    <th>Cidade</th>
+                    <th>CEP</th>
+                    <th>Numero de Cartão</th>
+                    <th>Data Validade</th>
+                    <th>CVV</th>
                 </tr>
             </thead>
 
@@ -44,19 +47,22 @@
                     <?php foreach($retorno->fetchall() as $value) { ?>
                         <tr> 
                             <td> <?php echo $value['id']?>  </td> 
-                            <td> <?php echo $value['nome']?> </td> 
-                            <td> <?php echo $value['descricao']?> </td> 
-                            <td> <?php echo $value['preco']?> </td> 
-                            <td> <?php echo $value['quantidade']?> </td>
-                            <td> <?php echo $value['categoria']?> </td> 
+                            <td> <?php echo $value['nomecompleto']?> </td> 
+                            <td> <?php echo $value['email']?> </td> 
+                            <td> <?php echo $value['endereco']?> </td> 
+                            <td> <?php echo $value['cidade']?> </td>
+                            <td> <?php echo $value['cep']?> </td>
+                            <td> <?php echo $value['numerocartao']?> </td>
+                            <td> <?php echo $value['datavalidade']?> </td>
+                            <td> <?php echo $value['cvv']?> </td>
 
                             <td>
-                            <form method="get" action="edtproduto.php">
+                            <form method="get" action="edtpagamento.php">
                                     <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
                                     <button name="alterar"  type="submit" class="button-link">Alterar</button>
                                 </form>
 
-                                <form action="crudproduto.php" method="post">
+                                <form action="crudpage.php" method="post">
                                 <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
                                 <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
                                 </form>

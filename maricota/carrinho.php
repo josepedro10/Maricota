@@ -19,9 +19,9 @@
 <div class="h">
 <h1>Seu Carrinho</h1>
 </div>
-        <form action="" method="post">
+        <div>
             <?php include 'cart.php'; ?>
-        </form>
+        </div>
 
         
 <div class="voltar">
