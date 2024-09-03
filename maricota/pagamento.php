@@ -19,7 +19,7 @@
         <div class="formu">
             <h3>Pagamento</h3>
             <div class="cadastro">
-            <form action="crudpagamento.php" method="post">
+            <form action="" method="post">
             <div class="form-group">
                 <label for="nome">Nome Completo</label>
                 <input type="text" id="nome" name="nome" required>

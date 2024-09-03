@@ -1,16 +1,16 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif; /* Fonte neutra e limpa */
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 40px; /* Mais espaçamento para um visual mais arejado */
-    border-bottom: 1px solid #e0e0e0; /* Linha sutil abaixo do cabeçalho */
+    padding: 20px 40px;
+    border-bottom: 1px solid #000000; /* Linha preta abaixo do cabeçalho */
 }
-
 
 .logo > img {
     height: 125px;
@@ -19,7 +19,7 @@ header {
 }
 
 main {
-    background-color: #ffffff;
+    background-color: #ffffff; /* Fundo branco */
     width: auto;
     display: flex;
     height: 550px;
@@ -29,10 +29,9 @@ main {
 }
 
 .cad {
-    background-color: #e7f5d8;
+    background-color: #f0f0f0; /* Cinza muito claro para manter a distinção */
     width: auto;
     display: flex;
-    height: 550px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -44,10 +43,10 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #e4edd8;
+    background-color: #ffffff; /* Fundo branco */
     width: 500px;
     height: auto;
-    border: 2px  #dcf7b6 solid;
+    border: 2px solid #000000; /* Borda preta */
     border-radius: 20px;
 }
 
@@ -56,59 +55,26 @@ main {
     margin-bottom: 60px;
 }
 
-
-
-.email > input[type="email"] {
-    border: 1px solid black;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    height: 25px;
-    padding: 10px 20px;
-    margin: 10px 0;
-
-}
-
-.senha > input[type="password"] {
-    border: 1px solid black;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    height: 25px;
-    padding: 10px 20px;
-    margin: 10px 0;
-}
-
-.botao {
-    padding-left: 15px;
-}
-
-input[type="text"] {
-    border: 1px solid black;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    height: 25px;
-    padding: 10px 20px;
-    margin: 10px 0;
-}
-
+input[type="email"],
+input[type="password"],
+input[type="text"],
 input[type="tel"] {
-    border: 1px solid black;
+    border: 1px solid #000000; /* Borda preta */
     width: 350px;
-    display: flex;
-    flex-direction: column;
     height: 25px;
     padding: 10px 20px;
     margin: 10px 0;
+    background-color: #ffffff; /* Fundo branco */
+    color: #000000; /* Texto preto */
 }
 
-.voltar {
+.botao,
+.voltar,
+.volta,
+.entrar,
+.criar,
+.outro {
     padding-left: 160px;
-}
-
-.volta {
-    padding-left: 5px;
 }
 
 .button-link {
@@ -119,7 +85,7 @@ input[type="tel"] {
     background-color: #000000; /* Fundo preto */
     text-align: center;
     text-decoration: none;
-    border: 1px solid #bdbdbd; /* Borda cinza claro */
+    border: 1px solid #000000; /* Borda preta */
     font-size: 16px;
     cursor: pointer;
     border-radius: 50px;
@@ -137,17 +103,6 @@ input[type="tel"] {
 
 .nomeg {
     display: flex;
-}
-
-.entrar {
-    margin-left: 156px;
-}
-
-.criar {
-    margin-left: 135px;
-}
-.outro{
-    margin-left: 140px;
 }
 
 footer {
@@ -197,8 +152,5 @@ footer {
 }
 
 .footer-column ul li a:hover {
-    color: #bdbdbd; /* Cor ao passar o mouse */
+    color: #bdbdbd; /* Texto cinza claro ao passar o mouse */
 }
-
-
-

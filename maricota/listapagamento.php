@@ -18,7 +18,7 @@
 
 <main>
 
-<h1>Lista de Produto</h1>
+<h1>Lista de Pagamento</h1>
 <?php 
   require_once( './db.php');
 
@@ -46,7 +46,7 @@
                 <tr> 
                     <?php foreach($retorno->fetchall() as $value) { ?>
                         <tr> 
-                            <td> <?php echo $value['id']?>  </td> 
+                            <td> <?php echo $value['id_pagamento']?>  </td> 
                             <td> <?php echo $value['nomecompleto']?> </td> 
                             <td> <?php echo $value['email']?> </td> 
                             <td> <?php echo $value['endereco']?> </td> 
@@ -58,12 +58,12 @@
 
                             <td>
                             <form method="get" action="edtpagamento.php">
-                                    <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
+                                    <input name="id" type="hidden" value="<?php echo $value['id_pagamento'];?>"/>
                                     <button name="alterar"  type="submit" class="button-link">Alterar</button>
                                 </form>
 
                                 <form action="crudpage.php" method="post">
-                                <input name="id" type="hidden" value="<?php echo $value['id'];?>"/>
+                                <input name="id" type="hidden" value="<?php echo $value['id_pagamento'];?>"/>
                                 <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
                                 </form>
 

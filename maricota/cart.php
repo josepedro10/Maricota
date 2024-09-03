@@ -1,78 +1,80 @@
-
 <?php
-
-require_once "./db.php";
-
 session_start();
 
-// Inicializa o carrinho se não estiver configurado
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
+// Inicializa o carrinho se ele ainda não existir
+if (!isset($_SESSION['carrinho'])) {
+    $_SESSION['carrinho'] = array();
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = isset($_POST['id']) ? $_POST['id'] : '';
-    $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
-    $preco = isset($_POST['preco']) ? $_POST['preco'] : '';
-    $quantidade = isset($_POST['quantidade']) ? $_POST['quantidade'] : 0;
-    $tamanho = isset($_POST['tamanho']) ? $_POST['tamanho'] : '';
+// Captura os dados do formulário para adicionar itens ao carrinho
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['nome'])) {
+    $nome = $_POST['nome'];
+    $preco = $_POST['preco'];
+    $tamanho = $_POST['tamanho'];
+    $quantidade = $_POST['quantidade'];
 
-    // Gera uma chave única para o item do carrinho, com base no ID e tamanho
-    $cart_key = $id . '_' . $tamanho;
+    // Cria um item para o carrinho
+    $item = array(
+        'nome' => $nome,
+        'preco' => $preco,
+        'tamanho' => $tamanho,
+        'quantidade' => $quantidade
+    );
 
-    if (isset($_POST['action']) && $_POST['action'] == 'add') {
-        // Adiciona ou atualiza a quantidade do item no carrinho
-        if (isset($_SESSION['cart'][$cart_key])) {
-            $_SESSION['cart'][$cart_key]['quantidade'] += $quantidade;
-        } else {
-            $_SESSION['cart'][$cart_key] = array(
-                'nome' => $nome,
-                'preco' => $preco,
-                'quantidade' => $quantidade,
-                'tamanho' => $tamanho
-            );
-        }
-    } elseif (isset($_POST['action']) && $_POST['action'] == 'update') {
-        // Atualiza a quantidade e o tamanho do item no carrinho
-        if (isset($_SESSION['cart'][$cart_key])) {
-            $_SESSION['cart'][$cart_key]['quantidade'] = $quantidade;
-            $_SESSION['cart'][$cart_key]['tamanho'] = $tamanho;
-        }
-    } elseif (isset($_POST['action']) && $_POST['action'] == 'remove') {
+    // Adiciona o item ao carrinho
+    $_SESSION['carrinho'][] = $item;
+}
+
+// Processa ações de remover ou atualizar o carrinho
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && isset($_POST['index'])) {
+    $index = $_POST['index'];
+
+    if ($_POST['action'] == 'remover') {
         // Remove o item do carrinho
-        if (isset($_SESSION['cart'][$cart_key])) {
-            unset($_SESSION['cart'][$cart_key]);
-        }
+        unset($_SESSION['carrinho'][$index]);
+    } elseif ($_POST['action'] == 'atualizar') {
+        // Atualiza a quantidade do item no carrinho
+        $nova_quantidade = $_POST['quantidade'];
+        $_SESSION['carrinho'][$index]['quantidade'] = $nova_quantidade;
     }
+
+    // Reorganiza o array do carrinho após remoção de item
+    $_SESSION['carrinho'] = array_values($_SESSION['carrinho']);
 }
 
-if (!empty($_SESSION['cart'])) {
-    foreach ($_SESSION['cart'] as $cart_key => $produto) {
+// Calcula o total do carrinho
+$total = 0;
+
+// Mostra os itens no carrinho
+if (!empty($_SESSION['carrinho'])) {
+    echo "<h2>Seu Carrinho</h2>";
+    foreach ($_SESSION['carrinho'] as $index => $item) {
+        // Calcula o subtotal do item
+        $subtotal = $item['preco'] * $item['quantidade'];
+        // Adiciona o subtotal ao total
+        $total += $subtotal;
+
         echo "<div class='cart-item'>
-                <p>{$produto['nome']} - Tamanho: {$produto['tamanho']} - Preço: {$produto['preco']} - Quantidade: {$produto['quantidade']}</p>
-                <input type='hidden' name='cart_key' value='$cart_key'>
-                <label for='quantidade_{$cart_key}'>Quantidade:</label>
-                <input type='number' id='quantidade_{$cart_key}' name='quantidade' value='{$produto['quantidade']}' min='1'>
-                <label for='tamanho_{$cart_key}'>Tamanho:</label>
-                <select id='tamanho_{$cart_key}' name='tamanho'>
-                    <option value='34' " . ($produto['tamanho'] == '34' ? 'selected' : '') . ">34</option>
-                    <option value='35' " . ($produto['tamanho'] == '35' ? 'selected' : '') . ">35</option>
-                    <option value='36' " . ($produto['tamanho'] == '36' ? 'selected' : '') . ">36</option>
-                    <option value='37' " . ($produto['tamanho'] == '37' ? 'selected' : '') . ">37</option>
-                    <option value='38' " . ($produto['tamanho'] == '38' ? 'selected' : '') . ">38</option>
-                    <option value='39' " . ($produto['tamanho'] == '39' ? 'selected' : '') . ">39</option>
-                    <option value='40' " . ($produto['tamanho'] == '40' ? 'selected' : '') . ">40</option>
-                    <option value='41' " . ($produto['tamanho'] == '41' ? 'selected' : '') . ">41</option>
-                    <option value='42' " . ($produto['tamanho'] == '42' ? 'selected' : '') . ">42</option>
-                </select>
-                <button type='submit' name='action' value='update' class='button-link'>Atualizar</button>
-                <button type='submit' name='delete' value='delete' class='button-link'>Remover</button>
-                <form action='pagamento.php' method='post'>
-                    <input name='id' type='hidden' value='{$id}'>
-                    <button type='submit' name='salvar' value='salvar' class='button-link'>Comprar</button>
+                <p>{$item['nome']} - Tamanho: {$item['tamanho']} - Preço: R$ {$item['preco']} - Quantidade: {$item['quantidade']} - Subtotal: R$ " . number_format($subtotal, 2, ',', '.') . "</p>
+                <form action='carrinho.php' method='post'>
+                    <input type='hidden' name='index' value='{$index}'>
+                    <label for='quantidade_{$index}'>Quantidade:</label>
+                    <input type='number' id='quantidade_{$index}' name='quantidade' value='{$item['quantidade']}' min='1'>
+                    <button type='submit' name='action' value='atualizar' class='button-link'>Atualizar</button>
+                    <button type='submit' name='action' value='remover' class='button-link'>Remover</button>
                 </form>
               </div>";
     }
+
+    // Exibe o total do carrinho
+    echo "<div class='cart-total'>
+            <h3>Total do Carrinho: R$ " . number_format($total, 2, ',', '.') . "</h3>
+          </div>";
+
+    // Adiciona o botão de comprar
+    echo "<form action='pagamento.php' method='post'>
+            <button type='submit' class='button-link'>Comprar</button>
+          </form>";
 } else {
     echo "<p>Seu carrinho está vazio.</p>";
 }

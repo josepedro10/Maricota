@@ -15,7 +15,7 @@ if(isset($_POST['delete'])){
     // Execute a consulta apenas uma vez
     if($sqlcombanco->execute()) {
         echo "<script type='text/javascript'>
-                alert('O cliente foi excluído');
+                alert('O Produto foi excluído');
                 window.location='listaproduto.php';
                 </script>";
     }

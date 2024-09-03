@@ -1,12 +1,14 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif; /* Fonte para uma aparência mais limpa */
 }
+
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 40px; /* Mais espaçamento para um visual mais arejado */
+    padding: 20px 40px;
     border-bottom: 1px solid #e0e0e0; /* Linha sutil abaixo do cabeçalho */
 }
 
@@ -26,39 +28,19 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #e4edd8;
+    background-color: #f5f5f5; /* Fundo cinza claro para contraste */
     width: 500px;
     height: auto;
-    border: 2px  #dcf7b6 solid;
+    border: 2px solid #e0e0e0; /* Borda cinza clara */
     border-radius: 20px;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-input {
-    border: 1px solid black;
+input, select, textarea {
+    border: 1px solid #000000; /* Borda preta */
     width: 350px;
-    display: flex;
-    flex-direction: column;
-    height: 15px;
-    padding: 10px 20px;
-    margin: 10px 0;
-}
-
-select {
-    border: 1px solid black;
-    width: 395px;
-    display: flex;
-    flex-direction: column;
-    height: 25px;
-}
-
-textarea {
-    border: 1px solid black;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    height: 25px;
+    height: 35px; /* Altura uniforme para campos de texto */
     padding: 10px 20px;
     margin: 10px 0;
 }
@@ -83,8 +65,6 @@ textarea {
     justify-content: center;
     align-items: center;
 }
-
-
 
 footer {
     width: auto;

@@ -17,7 +17,6 @@
 
 <main>
 <div class="h">
-<h1>Seu Carrinho</h1>
 </div>
         <div>
             <?php include 'cart.php'; ?>

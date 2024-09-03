@@ -1,3 +1,37 @@
+<?php
+// Certifique-se de que o arquivo db.php está carregando corretamente a conexão PDO
+require_once('./db.php');
+
+// Verifica se o parâmetro 'id' está definido na URL e se é um número válido
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $id_pagamento = intval($_GET['id']);
+
+    // Prepara e executa a consulta para buscar os dados do pagamento com base no ID
+    $stmt = $conexao->prepare('SELECT * FROM pagamento WHERE id_pagamento = ?');
+    $stmt->execute([$id_pagamento]);
+    $pagamento = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($pagamento) {
+        // Atribui os valores retornados para variáveis
+        $nomecompleto = $pagamento['nomecompleto'];
+        $email = $pagamento['email'];
+        $endereco = $pagamento['endereco'];
+        $cidade = $pagamento['cidade'];
+        $cep = $pagamento['cep'];
+        $numerocartao = $pagamento['numerocartao'];
+        $datavalidade = $pagamento['datavalidade'];
+        $cvv = $pagamento['cvv'];
+    } else {
+        // Redireciona ou exibe uma mensagem se o pagamento não for encontrado
+        echo "Pagamento não encontrado.";
+        exit;
+    }
+} else {
+    // Redireciona ou exibe uma mensagem se o ID não for válido
+    echo "ID inválido.";
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +44,7 @@
     <header>
         <div class="logo">
             <a href="index.php">
-            <img src="./imagens/nova.jpg" alt="">
+                <img src="./imagens/nova.jpg" alt="">
             </a>
         </div>
     </header>
@@ -19,52 +53,51 @@
         <div class="formu">
             <h3>Pagamento</h3>
             <div class="cadastro">
-            <form action="crudpagamento.php" method="post">
+                <form action="crudpagamento.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($id_pagamento); ?>">
 
-            <input type="hidden" name="id" value="<?php echo $id_pagamento; ?>">
-
-            <div class="form-group">
-                <label for="nome">Nome Completo</label>
-                <input type="text" id="nome" name="nome" value="<?php echo  $nomecompleto; ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" value="<?php echo  $email; ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="endereco">Endereço</label>
-                <input type="text" id="endereco" name="endereco"  value="<?php echo  $endereco; ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="cidade">Cidade</label>
-                <input type="text" id="cidade" name="cidade" value="<?php echo  $cidade; ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="cep">CEP</label>
-                <input type="text" id="cep" name="cep" value="<?php echo  $cep; ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="cartao">Número do Cartão</label>
-                <input type="text" id="cartao" name="cartao" value="<?php echo  $numerocartao; ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="validade">Data de Validade</label>
-                <input type="text" id="validade" name="validade" placeholder="MM/AA" value="<?php echo  $datavalidade; ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" value="<?php echo  $cvv; ?>" required>
-            </div>
-            <div class="criar">
-            <input type="submit" value="Concluir" class="button-link">
-            </div>
-        </form>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($nomecompleto); ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" name="endereco" value="<?php echo htmlspecialchars($endereco); ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" value="<?php echo htmlspecialchars($cidade); ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" value="<?php echo htmlspecialchars($cep); ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cartao">Número do Cartão</label>
+                        <input type="text" id="cartao" name="cartao" value="<?php echo htmlspecialchars($numerocartao); ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="validade">Data de Validade</label>
+                        <input type="text" id="validade" name="validade" placeholder="MM/AA" value="<?php echo htmlspecialchars($datavalidade); ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" value="<?php echo htmlspecialchars($cvv); ?>" required>
+                    </div>
+                    <div class="criar">
+                        <input type="submit" value="Concluir" class="button-link">
+                    </div>
+                </form>
             </div>
         </div>
     </main>
 
     <footer>
-    <div class="footer-container">
+        <div class="footer-container">
             <div class="footer-column">
                 <h3>Sobre Nós</h3>
                 <p>Aqui na Loja de Sapatos, oferecemos a melhor seleção de calçados para todos os estilos e ocasiões. Qualidade e conforto garantidos.</p>
@@ -86,9 +119,7 @@
                     <li>Endereço: Rua 10 de Maio, 453, Guanambi, BA</li>
                 </ul>
             </div>
-            </div>
         </div>
     </footer>
-
 </body>
 </html>

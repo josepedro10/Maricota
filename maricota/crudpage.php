@@ -16,7 +16,7 @@ if(isset($_POST['delete'])){
     if($sqlcombanco->execute()) {
         echo "<script type='text/javascript'>
                 alert('O Pagamento foi excluído');
-                window.location='listaproduto.php';
+                window.location='listapagamento.php';
                 </script>";
     }
 }
