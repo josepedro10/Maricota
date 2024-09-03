@@ -12,7 +12,7 @@ header {
 }
 
 main {
-    background-color:  #eaffd4;
+    background-color:  #e3e3e3;
     width: auto;
     display: flex;
     height: 550px;
@@ -40,7 +40,7 @@ main {
     background-color: #ecf9d9;
     width: 500px;
     height: auto;
-    border: 2px  #dcf7b6 solid;
+    border: 2px  #b7b7b7 solid;
     border-radius: 20px;
     margin-top: 15px;
     margin-bottom: 15px;

@@ -6,7 +6,7 @@ session_start();
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Consulta ao banco de dados para obter os dados do cliente
+    // Consulta ao banco de dados para obter os dados do produto
     $sql = "SELECT * FROM produtos WHERE id = :id";
     $retorno = $conexao->prepare($sql);
     $retorno->bindParam(':id', $id, PDO::PARAM_INT);
@@ -23,8 +23,6 @@ if (isset($_GET['id'])) {
     $categoria = $array_retorno['categoria'] ?? '';
 } 
 
-
-
 if(isset($_POST["cad-produto"])){
     $nome = $_POST["nome"];
     $descricao = $_POST["descricao"];
@@ -34,15 +32,29 @@ if(isset($_POST["cad-produto"])){
     $tamanhos = $_POST["tamanhos"];
     $imgs = $_POST["imgs"];
 
-    require "./db.php";
-
-
-    $sql = "INSERT INTO produtos VALUES (DEFAULT, '$nome', '$descricao', '$preco', '$quantidade', '$tamanhos', '$categoria', '$imgs')";
+    // Certifique-se de que os campos a seguir estão corretos
+    $sql = "INSERT INTO produtos (nome, descricao, preco, quantidade, tamanhos, categoria, imgs) 
+            VALUES (:nome, :descricao, :preco, :quantidade, :tamanhos, :categoria, :imgs)";
     $stm = $conexao->prepare($sql);
+    $stm->bindParam(':nome', $nome, PDO::PARAM_STR);
+    $stm->bindParam(':descricao', $descricao, PDO::PARAM_STR);
+    $stm->bindParam(':preco', $preco, PDO::PARAM_STR);
+    $stm->bindParam(':quantidade', $quantidade, PDO::PARAM_INT);
+    $stm->bindParam(':tamanhos', $tamanhos, PDO::PARAM_STR);
+    $stm->bindParam(':categoria', $categoria, PDO::PARAM_STR);
+    $stm->bindParam(':imgs', $imgs, PDO::PARAM_STR);
     $stm->execute();
-    $res = $stm->fetch();
+    
+    // Exibir mensagem de sucesso
+    echo "<script type='text/javascript'>
+            alert('Produto cadastrado com sucesso');
+            window.location='listaproduto.php';
+          </script>";
 }
+
+// Aqui está a chave de fechamento que estava faltando
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -62,7 +74,7 @@ if(isset($_POST["cad-produto"])){
     <main>
     <div class="container">
         <h1>Cadastro de Produto</h1>
-        <form action="" method="post">
+        <form action="crudedtproduto.php" method="post">
 
         <input type="hidden" name="id" value="<?php echo $id; ?>">
 
@@ -106,20 +118,20 @@ if(isset($_POST["cad-produto"])){
             <div class="tamanho">
             <label for="tamanhos">Tamanhos Disponíveis:</label>
             <div class="checkbox-group">
-                <label><input type="checkbox" name="tamanhos" value="34" value="<?php echo $tamanhos; ?>"> 34</label>
-                <label><input type="checkbox" name="tamanhos" value="35"value="<?php echo $tamanhos; ?>"> 35</label>
-                <label><input type="checkbox" name="tamanhos" value="36"value="<?php echo $tamanhos; ?>"> 36</label>
-                <label><input type="checkbox" name="tamanhos" value="37" value="<?php echo $tamanhos; ?>"> 37</label>
-                <label><input type="checkbox" name="tamanhos" value="38" value="<?php echo $tamanhos; ?>"> 38</label>
-                <label><input type="checkbox" name="tamanhos" value="39" value="<?php echo $tamanhos; ?>"> 39</label>
-                <label><input type="checkbox" name="tamanhos" value="40"value="<?php echo $tamanhos; ?>"> 40</label>
-                <label><input type="checkbox" name="tamanhos" value="41"value="<?php echo $tamanhos; ?>"> 41</label>
-                <label><input type="checkbox" name="tamanhos" value="42"value="<?php echo $tamanhos; ?>"> 42</label>
+                <label><input type="checkbox" name="tamanhos" value="34"> 34</label>
+                <label><input type="checkbox" name="tamanhos" value="35"> 35</label>
+                <label><input type="checkbox" name="tamanhos" value="36"> 36</label>
+                <label><input type="checkbox" name="tamanhos" value="37"> 37</label>
+                <label><input type="checkbox" name="tamanhos" value="38"> 38</label>
+                <label><input type="checkbox" name="tamanhos" value="39"> 39</label>
+                <label><input type="checkbox" name="tamanhos" value="40"> 40</label>
+                <label><input type="checkbox" name="tamanhos" value="41"> 41</label>
+                <label><input type="checkbox" name="tamanhos" value="42"> 42</label>
             </div>
             </div>
             
            <div class="cad">
-           <button type="submit" class="button-link" name="cad-produto">Cadastrar Produto</button>
+           <button type="submit" class="button-link" name="editar">Cadastrar Produto</button>
            </div>
         </form>
         <div class="voltar">

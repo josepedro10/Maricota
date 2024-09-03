@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* Fonte para uma aparência mais limpa */
+    font-family: Arial, sans-serif;
 }
 
 header {
@@ -9,70 +9,78 @@ header {
     align-items: center;
     justify-content: center;
     padding: 20px 40px;
-    border-bottom: 1px solid #e0e0e0; /* Linha sutil abaixo do cabeçalho */
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.logo > img {
-    height: 100px; /* Altura reduzida para um ajuste mais harmonioso */
-    width: auto; /* Ajusta a largura automaticamente para manter a proporção */
+.logo img {
+    height: 100px;
+    width: auto;
 }
 
 main {
-    background-color: #ffffff; /* Fundo branco */
-    width: auto;
-    height: auto;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-form {
+.container {
+    background-color: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px;
+}
+
+.form-group {
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #f5f5f5; /* Fundo cinza claro para contraste */
-    width: 500px;
-    height: auto;
-    border: 2px solid #e0e0e0; /* Borda cinza clara */
-    border-radius: 20px;
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
-input, select, textarea {
-    border: 1px solid #000000; /* Borda preta */
-    width: 350px;
-    height: 35px; /* Altura uniforme para campos de texto */
-    padding: 10px 20px;
-    margin: 10px 0;
+input, textarea, select {
+    border: 1px solid #000000;
+    padding: 10px;
+    width: 100%;
+}
+
+textarea {
+    height: 100px;
+}
+
+select {
+    height: 35px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox-group label {
+    margin: 5px;
 }
 
 .button-link {
     display: inline-block;
     padding: 10px 20px;
-    margin: 10px 0;
-    color: #ffffff; /* Texto branco */
-    background-color: #000000; /* Fundo preto */
+    color: #ffffff;
+    background-color: #000000;
     text-align: center;
     text-decoration: none;
-    border: 1px solid #bdbdbd; /* Borda cinza claro */
+    border: 1px solid #bdbdbd;
     font-size: 16px;
     cursor: pointer;
     border-radius: 50px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 footer {
-    width: auto;
-    background-color: #000000; /* Fundo preto */
-    height: auto;
+    background-color: #000000;
+    color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    color: #ffffff; /* Texto branco */
 }
 
 .footer-container {
@@ -91,10 +99,9 @@ footer {
 }
 
 .footer-column h3 {
-    border-bottom: 2px solid #ffffff; /* Linha branca */
+    border-bottom: 2px solid #ffffff;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    color: #ffffff; /* Texto branco */
 }
 
 .footer-column ul {
@@ -107,11 +114,11 @@ footer {
 }
 
 .footer-column ul li a {
-    color: #ffffff; /* Texto branco */
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-column ul li a:hover {
-    color: #bdbdbd; /* Cor ao passar o mouse */
+    color: #bdbdbd;
 }

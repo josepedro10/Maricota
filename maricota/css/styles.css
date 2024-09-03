@@ -2,6 +2,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif; /* Fonte neutra e limpa */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos a altura total da tela */
 }
 
 header {
@@ -20,22 +23,20 @@ header {
 
 main {
     background-color: #ffffff; /* Fundo branco */
-    width: auto;
+    flex: 1; /* Faz com que o main ocupe o espaço restante entre o header e o footer */
     display: flex;
-    height: 550px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
 
 .cad {
     background-color: #f0f0f0; /* Cinza muito claro para manter a distinção */
-    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
+    width: 100%;
+    padding: 20px;
 }
 
 .formu {
@@ -45,14 +46,38 @@ main {
     justify-content: center;
     background-color: #ffffff; /* Fundo branco */
     width: 500px;
-    height: auto;
+    padding: 20px;
     border: 2px solid #000000; /* Borda preta */
     border-radius: 20px;
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 
-.cadastro {
-    margin-top: 50px;
-    margin-bottom: 60px;
+.formu2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* Fundo branco */
+    width: 500px;
+    padding: 20px;
+    border: 2px solid #000000; /* Borda preta */
+    border-radius: 20px;
+    margin-left: 450px;
+}
+
+.senha {
+    margin-right: 10px;
+}
+
+.email2 {
+    margin-left: 5px;
+}
+
+.cadastro, .entrar, .voltar, .volta, .cadastrar {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center; /* Centraliza o conteúdo dentro dessas divs */
 }
 
 input[type="email"],
@@ -66,15 +91,6 @@ input[type="tel"] {
     margin: 10px 0;
     background-color: #ffffff; /* Fundo branco */
     color: #000000; /* Texto preto */
-}
-
-.botao,
-.voltar,
-.volta,
-.entrar,
-.criar,
-.outro {
-    padding-left: 160px;
 }
 
 .button-link {
@@ -97,21 +113,11 @@ input[type="tel"] {
     align-items: center;
 }
 
-.cpf {
-    padding-top: 5px;
-}
-
-.nomeg {
-    display: flex;
-}
-
 footer {
-    width: auto;
     background-color: #000000; /* Fundo preto */
-    height: auto;
+    color: #ffffff; /* Texto branco */
     padding: 20px 0;
     text-align: center;
-    color: #ffffff; /* Texto branco */
 }
 
 .footer-container {

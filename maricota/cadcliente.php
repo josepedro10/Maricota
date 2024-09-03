@@ -19,28 +19,28 @@
 
     <main class="cad">
         <div class="cadastro">
-            <div class="formu">
+            <div class="formu2">
                 <h3>Cadastre sua conta</h3>
                 <form action="crudcadcliente.php" method="POST">
 
                     <div class="nome">
-                    <label for="nome">Nome</label>
+                    <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" placeholder="nome" required>
                     </div>
 
                     <div class="email">
-                        <label for="email">Email</label>
+                        <label for="email">Email:</label>
                         <input type="email" id="email" name="email" placeholder="email" required>
                     </div>
 
                     <div class="senha">
-                        <label for="password">Senha</label>
+                        <label for="password">Senha:</label>
                         <input type="password" id="password" name="password" placeholder="senha" required>
                     </div>
 
 
                     <div class="cpf">
-                        <label for="text">CPF</label>
+                        <label for="text">CPF:</label>
                         <input type="text" name="cpf" placeholder="000.000.000-00">
                     </div>
 

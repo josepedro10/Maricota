@@ -22,17 +22,17 @@
             <form action="crudacesso.php" method="post">
 
             <div class="nome">
-            <label for="nome">Nome</label>
+            <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" placeholder="nome" required>
             </div>
         
-            <div class="email">
-            <label for="email">Email</label>
+            <div class="email2">
+            <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Email" required>
             </div>
         
             <div class="senha">
-            <label for="password">Senha</label>
+            <label for="password">Senha:</label>
             <input type="password" id="password" name="password" placeholder="Senha" required>
             </div>
         
@@ -40,7 +40,9 @@
             <input type="submit" value="Entrar" class="button-link">
             </div>
             </form>
+            <div class="cadastrar">
             <a href="cadcliente.php" class="button-link">Cadastrar conta</a>
+            </div>
             <div class="volta">
             <a href='index.php' class="button-link">voltar</a>
             </div>

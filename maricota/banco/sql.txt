@@ -1,0 +1,56 @@
+create database maricota;
+
+use maricota;
+
+create table produtos(
+id int auto_increment  primary key,
+nome varchar(100),
+descricao text,
+preco decimal(10,2),
+quantidade int(11),
+tamanhos varchar(50),
+categoria varchar(100),
+imgs varchar(100),
+estoque int
+);
+ 
+
+create table usuarios(
+id int auto_increment primary key,
+email varchar(100),
+senha varchar(255),
+cpf varchar(125),
+nome varchar(100)
+);
+
+
+CREATE TABLE pagamento (
+    id_pagamento INT AUTO_INCREMENT,
+    id_produtos INT,
+    id_usuario INT,
+    nomecompleto VARCHAR(100),
+    email VARCHAR(100),
+    endereco VARCHAR(100),
+    cidade VARCHAR(100),
+    cep VARCHAR(50),
+    numerocartao BIGINT,
+    datavalidade DATE,
+    cvv INT,
+    PRIMARY KEY (id_pagamento),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+    FOREIGN KEY (id_produtos) REFERENCES produtos(id)
+);
+
+
+CREATE TABLE carrinho (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    produto_id INT NOT NULL,
+    sessao_id VARCHAR(255) NOT NULL,
+    quantidade INT NOT NULL,
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+);
+
+
+
+select * from pagamento;
+

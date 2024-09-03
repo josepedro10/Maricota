@@ -5,14 +5,17 @@ if(isset($_POST['delete'])){
 
     $id = $_POST['id'];
 
-    // Use o parâmetro nomeado :id na consulta SQL
-    $sql = "DELETE FROM usuarios WHERE id = :id";
-
+    // Substitua 'usuario_id' pelo nome correto da coluna em 'pagamento'
+    $sql = "DELETE FROM pagamento WHERE id_usuario = :id";
     $sqlcombanco = $conexao->prepare($sql);
-    // Vincula o parâmetro :id corretamente
+    $sqlcombanco->bindParam(':id', $id, PDO::PARAM_INT);
+    $sqlcombanco->execute();
+
+    // Excluir o cliente na tabela 'usuarios'
+    $sql = "DELETE FROM usuarios WHERE id = :id";
+    $sqlcombanco = $conexao->prepare($sql);
     $sqlcombanco->bindParam(':id', $id, PDO::PARAM_INT);
 
-    // Execute a consulta apenas uma vez
     if($sqlcombanco->execute()) {
         echo "<script type='text/javascript'>
                 alert('O cliente foi excluído');

@@ -23,11 +23,11 @@ if (isset($_GET['id'])) {
 } 
 if (isset($_POST["cadastrar"])) {
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $senha = $_POST['senha'];
     $cpf = $_POST['cpf'];
     $nome = $_POST['nome'];
 
-    $sql = "INSERT INTO usuarios (email, senha, cpf, nome) VALUES ('$email', '$password', '$cpf', '$nome')";
+    $sql = "INSERT INTO usuarios (email, senha, cpf, nome) VALUES ('$email', '$senha', '$cpf', '$nome')";
     $stm = $conexao->prepare($sql);
     $stm->execute();
     $res = $stm->fetch();
@@ -61,7 +61,7 @@ if (isset($_POST["cadastrar"])) {
         <div class="cadastro">
             <div class="formu">
                 <h3>Cadastre sua conta</h3>
-                <form action="" method="POST">
+                <form action="crudedtcliente.php" method="POST">
 
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
 
@@ -77,7 +77,7 @@ if (isset($_POST["cadastrar"])) {
 
                     <div class="senha">
                         <label for="password">Senha</label>
-                        <input type="password" id="password" name="password" placeholder="senha" required value="<?php echo $password; ?>">
+                        <input type="password" id="password" name="password" placeholder="senha" required value="<?php echo senha; ?>">
                     </div>
 
                     <div class="cpf">
@@ -86,7 +86,7 @@ if (isset($_POST["cadastrar"])) {
                     </div>
 
                     <div class="criar">
-                        <input type="submit" value="Criar Conta" class="button-link" name="cadastrar">
+                        <input type="submit" value="editar" class="button-link" name="editar">
                     </div>
                     
                     <div class="voltar">
